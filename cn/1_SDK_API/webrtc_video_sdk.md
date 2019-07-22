@@ -405,4 +405,230 @@ outgoing:{
 无
 
 ## 回调函数
+<!-- onSetup -->
+### onSetup(url, pin_status, conference_extension)
+由makeCall等触发，代表呼叫已完成初始化。
+
+#### 主要参数
+| 参数    | 含义                          |
+| ------- | ----------------------------- |
+| url    | 一个可以应用到< video >的本地媒体流URL 。对单收或单控呼叫，该值为空 |
+| conference_extension | 只有呼叫IVR时才会设置该值。 “standard”表示呼叫的是标准的IVR；“mssip”表示呼叫的是lync/skype for business的网关 |
+|pin_status|入会密码状态：<br/> - “none” —主持人和访客都没有设置入会密码<br/> - “required” — 表示主持人和访客都设置了入会密码<br/> - “optional” —表示设置了主持人入会密码，但没有设置访客密码|
+
+在实现此回调函数时，开发者应根据返回值使用合适的入会密码（可为空）和接驳号（如会议室短号、空等）调用connect函数继续完成连接。该回调函数可能会被触发多次。
+
+
+<!-- onConnect -->
+### onConnect(url)
+connect函数执行成功，该回调函数将被触发，该函数可能被触发多次。
+
+#### 主要参数
+| 参数    | 含义                          |
+| ------- | ----------------------------- |
+| url    | 一个可应用到< video >的远程媒体流URL  ,可以为空值|
+
+<!-- onError -->
+### onError(err)
+在通讯过程中出现了严重错误，呼叫连接应假定已被关闭。触发的可能原因包括：
+- onConnect之前，获取摄像机/麦克风使用权失败
+- 在通讯过程中，服务器连接中断或活动性检查失败
+
+#### 主要参数
+| 参数    | 含义                          |
+| ------- | ----------------------------- |
+| err    | 错误描述信息|
+
+<!-- onDisconnect -->
+### onDisconnect(reason)
+通讯被服务器断开
+
+#### 主要参数
+| 参数    | 含义                          |
+| ------- | ----------------------------- |
+| reason    | 断开原因|
+
+
+<!-- onHoldResume -->
+### onHoldResume(setting)
+通讯被服务器挂起，或恢复
+
+#### 主要参数
+| 参数    | 含义                          |
+| ------- | ----------------------------- |
+| setting    | true:挂起  false:恢复|
+
+
+<!-- onLayoutUpdate -->
+### onLayoutUpdate(view, participants)
+会议室视频布局有更新
+
+#### 主要参数
+| 参数    | 含义                          |
+| ------- | ----------------------------- |
+| view    | 会议室布局包含以下几种：<br/> - “1:0” —一个大屏<br/> - “1:7” — 1大7小布局 <br/> - “1:21” — 1大21布局 |
+|participants	|以uuid为标识的参会者顺序列表，依次为当前主讲人… 	|
+#### 示例
+```
+{
+    view: "1: 7",
+    participants: ["a0196175 - b462 - 48 a1 - b95c - f322c3af57c1", "65 b4af2f - 657 a - 4081 - 98 a8 - b17667628ce3"]
+}
+```
+
+<!-- onPresentation -->
+### onPresentation(setting, presenter)
+开始或停止演示。
+
+#### 主要参数
+| 参数    | 含义                          |
+| ------- | ----------------------------- |
+| setting    | true:演示流已开始  false:演示已结束 	|
+|presenter		|演示者名字，只有在setting为true时可以设置，false时为null	|
+
+
+<!-- onPresentationReload -->
+### onPresentationReload(url)
+有新的JPEG格式 的演示帧可用。url为演示帧对应的图片URL，可通过这个URL获取演示帧对应的图像
+
+#### 主要参数
+| 参数    | 含义                          |
+| ------- | ----------------------------- |
+| url    | 新的演示帧对应的图片URL 	|
+
+<!-- onParticipantCreate -->
+### onParticipantCreate(participant)
+有新的参会者加入会议。
+
+#### 主要参数
+participant	新参会者对象 ，对象详细信息请参照参会者详情 
+##### 参会者对象属性详情
+
+| 参数    | 含义                          |
+| ------- | ----------------------------- |
+| call_direction    | ”in”:主动呼入；”out”:会议室外呼 	|
+|display_name		|参会者显示名称				|
+|Encryption			|加密否。 “on”:加密  “off”:不加密	|
+|has_media|参会者是否有媒体标识	|
+|is_audio_only	|是否为纯音频呼叫:yes 或no		|
+|is_external	|是否是外部参会者标识:true/false|
+|is_muted|是否被静音:yes或 no	|
+|Streaming	|是否是直播或录制媒体流：true/false		|
+|is_video_call		|是否为视频呼叫。“YES”为视频呼叫		|
+|protocol		|参会者通讯协议			|
+|role			|参会者角色。 Chair:主持人 guest:访客		|
+|service_type |服务类型:<br/> - “connecting” —外呼参会者连接建立中<br/> - “waiting_room” —等待加入被锁定的会议室<br/> - “ivr” —等待输入入会密码<br/> - “conference” —会议室呼叫<br/> - “gateway” —点到点呼叫|
+|spotlight		|设置参会者“焦点”的UNIX时间戳		|
+|start_time			|入会时间（UNIX 秒格式）		|
+|uuid			|参会者唯一标识				|
+|uri		|参会者uri		|
+|vendor		|入会者使用的终端或浏览器的厂商标识			|
+
+
+<!-- onParticipantUpdate -->
+### onParticipantUpdate(participant)
+参会者信息有更新
+
+#### 主要参数
+| 参数    | 含义                          |
+| ------- | ----------------------------- |
+| participant    | 有信息更新的参会者对象。对象详细信息请参照“onParticipantCreate” 	|
+
+
+<!-- onParticipantDelete -->
+### onParticipantDelete(participant)
+有参会者离开会议
+
+#### 主要参数
+| 参数    | 含义                          |
+| ------- | ----------------------------- |
+| participant    | 离开会议室的参会者对象。 该对象只包含一个uuid属性 	|
+
+
+
+<!-- onChatMessage -->
+### onChatMessage(message)
+有群发的聊天文字信息
+
+#### 主要参数
+| 参数    | 含义                          |
+| ------- | ----------------------------- |
+| message对象    |此对象包含以下属性: <br/> - origin —— 发送消息的参会者名称<br/> - uuid —— 发送消息的参会者唯一标识<br/> - type —— 消息MIME类型<br/> - payload —— 文字内容|
+
+<!-- onStageUpdate -->
+### onStageUpdate(stage)
+会议室视频布局上显示的参会者有变化。按顺序（当前主讲人排第一）排列的参会者数组，除了在屏幕上显示的位置序号，还有他们的语音状态。
+
+#### 主要参数
+| 参数    | 含义                          |
+| ------- | ----------------------------- |
+| Stage    |按顺序（当前主讲人排第一）排列的参会者对象数组。每个参会者对象的属性: <br/> - participant_uuid —— 参会者唯一标识<br/> - stage_index —— 参会者在”舞台“上的顺序编号<br/> - vad —— 语音状态: 0：未讲话  100：正在讲话|
+
+
+
+<!-- onPresentationConnected -->
+### onPresentationConnected(url)
+在WebRTC通讯中，有云平台发送的全帧率演示流到达本端
+
+#### 主要参数
+| 参数    | 含义                          |
+| ------- | ----------------------------- |
+| url    |可添加至< video >的全帧率演示流URL |
+
+
+<!-- onPresentationDisconnected -->
+### onPresentationDisconnected(reason)
+在WebRTC通信中，云平台终止了全帧率演示流
+
+#### 主要参数
+| 参数    | 含义                          |
+| ------- | ----------------------------- |
+| reason    |中断原因 |
+
+
+<!-- onScreenshareStopped -->
+### onScreenshareStopped(reason)
+在WebRTC通信中，屏幕共享被中止。有可能是辅流权限被其他演示者抢占，或用户终止了屏幕共享，或有错误发生。
+
+#### 主要参数
+| 参数    | 含义                          |
+| ------- | ----------------------------- |
+| reason    |中断原因 |
+
+
+<!-- onScreenshareMissing -->
+### onScreenshareMissing()
+未安装屏幕共享插件（chrome）,建议用户按指示安装插件。
+
+
+
+<!-- 实例变量 -->
+## 实例变量
+在makeCall以前，可通过设置ZjRTC对象的实例变量(对象全局属性)改变通讯配置。
+
+| 实例变量    | 描述                          |
+| ------- | ----------------------------- |
+| audio_source /video_source    |音频源/视频源: <br/> - null ：默认音频/视频源<br/> - false：未请求音频/视频源<br/> - uuid: uuid唯一标识的媒体源(只适用chrome)	|
+|recv_audio / recv_video	|是否接收音频/视频。True/false		|
+|bandwidth_in / bandwidth_out	|输入/输出带宽。 缺省值：1280；可被makeCall中的带宽参数覆盖		|
+|default_stun	|默认的stun服务器		|
+|turn_server	|Turn服务器， 格式为javascript选项。例如: <br/> {‘url’: ‘turn:10.0.0.1’, ‘username’: ‘user’, ‘credential’: ‘password’ }|
+|screenshare_api	|用于获取定制的chrome屏幕共享插件。缺省值为：ZjGetScreen	|
+
+<!-- 只读属性 -->
+## 只读属性
+在RTC对象上的一些属性是只读的(由系统赋值)，在onSetup回调函数后可以用于获取与本次通讯相关的一些有用信息。
+
+| 实例变量    | 描述                          |
+| ------- | ----------------------------- |
+| role    |本端在会议中的角色。Chair:主持人；guest: “访客”	|
+|version	|云平台会议节点版本号 例如. “10 (25010.0.0)”	|
+|chat_enabled	|是否启用了文字聊天功能			|
+|service_type	|服务类型。“conference”：会议；”gateway”:点到点通讯		|
+|current_service_type		|当前服务类型, “conference” / “waiting_room” / “gateway” /等,参见“onParticipantCreate”	|
+
+
+
+
+
 
