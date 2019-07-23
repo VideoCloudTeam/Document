@@ -5,5 +5,5 @@
 | SDK&&DEMO | 下载地址                                      |
 | --------- | --------------------------------------------- |
 | web 端    | https://github.com/VideoCloudTeam/WEB-SDK.git |
-| ios       |  https://github.com/VideoCloudTeam/           |                                 |
+| ios       |  https://github.com/VideoCloudTeam/           |
 | Android   |   https://github.com/VideoCloudTeam/          |                                           |
