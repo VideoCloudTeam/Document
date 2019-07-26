@@ -77,7 +77,7 @@
 | <a href="#disconnect">disconnect</a>                         | 断开链接                                                     |
 | <a href="#getParticipants">getParticipants</a>               | 获取参会人列表                                               |
 | <a href="#isVMR">isVMR</a>                                   | 是否是讲堂                                                   |
-| <a href="#canRecord">canRecord</a>                           | 是否允许录制                                                 |
+| <a href="#canRecord">canRecord</a>                           | 是否允许录制                                                 |
 | <a href="#canLive">canLive</a>                               | 是否允许直播                                                 |
 | <a href="#reconnectNewSessionCall">reconnectNewSessionCall</a> | 重新入会                                                     |
 | <a href="#reconnectOnlyMediaCall">reconnectOnlyMediaCall</a> | 重新建立媒体连接（多用于断网重连）                           |
@@ -88,7 +88,7 @@
 | <a href="#setVideoEnable">setVideoEnable</a>                 | 关闭/打开摄像头                                              |
 | <a href="#setAudioEnable">setAudioEnable</a>                 | 关闭/打开麦克风                                              |
 | <a href="#setAudioModelEnable">setAudioModelEnable</a>       | 关闭/打开语音模式                                            |
-| <a href="#sendPresentationImage">sendPresentationImage</a>   | 发送双流图片（上传文件方式）                                 |
+| <a href="#sendPresentationImage">sendPresentationImage</a>   | 发送双流图片（上传文件方式）                                 |
 | <a href="#sendPresentationBitmap">sendPresentationBitmap</a> | 发送双流图片（视频流方式）                                   |
 | <a href="#sendPresentationScreen">sendPresentationScreen</a> | 屏幕共享                                                     |
 | <a href="#sendPresentationVideo">sendPresentationVideo</a>   | 发送视频文件（仅支持Y4M(YUV4MPEG2)格式视频文件）             |
