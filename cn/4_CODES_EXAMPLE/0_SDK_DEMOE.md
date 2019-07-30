@@ -2,7 +2,7 @@
 
 | 平台 | 下载地址                                      |
 | --------- | --------------------------------------------- |
-| Android | [前往GitHub](https://github.com/VideoCloudTeam/Android-SDK) |
-| iOS    | [前往GitHub](https://github.com/VideoCloudTeam/iOS-SDK) |
-| Web | [前往GitHub](https://github.com/VideoCloudTeam/WEB-SDK) |
+| Android | <a href="https://github.com/VideoCloudTeam/Android-SDK" target="_blank">前往GitHub</a> |
+| iOS    | <a href="https://github.com/VideoCloudTeam/iOS-SDK" target="_blank">前往GitHub</a> |
+| Web | <a href="https://github.com/VideoCloudTeam/WEB-SDK" target="_blank">前往GitHub</a> |
 
