@@ -6,7 +6,7 @@
 
 ###添加SDK
 
-1. 复制 `vcrtc-v*.aar`文件到app的libs下
+1. 复制 `vcrtc-v*.aar`文件到app的libs下 
 
 2. 在项目的根目录的`build.gradle`加入以下代码
 
