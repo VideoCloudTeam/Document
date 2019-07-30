@@ -19,7 +19,7 @@
 ![](assets/4.png)
 - 在`info.plist` 中 - 添加 麦克风 、相机使用权限
 ![](https://raw.githubusercontent.com/zijingcloud/iOS-SDK/master/Docs/images/vcrtc_install_privacy.png)
-### 初始化
+###初始化
 
 
 ```objc
