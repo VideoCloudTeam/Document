@@ -8,7 +8,7 @@
 - [VCRTCListener回调方法列表](#vcrtclistener回调方法列表)
 - [VCRegistrationUtil方法列表](#vcregistrationutil方法列表)
 
-#### VCRTCPreferences方法列表
+### VCRTCPreferences方法列表
 
 | 方法                                                         | 描述                                                        |
 | :----------------------------------------------------------- | :---------------------------------------------------------- |
@@ -38,7 +38,7 @@
 
 
 
-#### Call类方法列表
+### Call类方法列表
 
 | 方法                                   | 描述                                     |
 | :------------------------------------- | :--------------------------------------|
@@ -57,49 +57,49 @@
 
 
 
-#### VCRTC类方法列表
+### VCRTC类方法列表
 
-| 方法                                                         | 描述                                                         |
+| 方法                                                         | 描述                                                          |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <a href="#setVCRTCListener">setVCRTCListener</a>             | 设置会中监听                                                 |
-| <a href="#setApiServer">setApiServer</a>                     | 设置api服务器（仅对当次入会生效，不设置则使用VCRTCPreferences保存的服务器地址） |
-| <a href="#setLivingRecorderServer">setLivingRecorderServer</a> | 设置录制直播服务器，优先级高于偏好设置，如果不设置则为偏好设置值。 |
-| <a href="#setAccount">setAccount</a>                         | 设置自己的账号                                               |
-| <a href="#setOemID">setOemID</a>                             | 设置OemID                                                    |
-| <a href="#setCheckdup">setCheckdup</a>                       | 检查重复参会者                                               |
-| <a href="#setHideMea">setHideMe</a>                          | 设置隐身入会                                                 |
-| <a href="#setCallType">setCallType</a>                       | 设置呼叫类型                                                 |
-| <a href="#setClayout">setClayout</a>                         | 转发模式下，控制接收大小视频流的数量                         |
-| <a href="#setTime">setTime</a>                               | 被呼时设置接收到的消息中的呼叫时间。                         |
-| <a href="#setBsskey">setBsskey</a>                           | 点对点被呼时设置接收到的消息中的bsskey                       |
-| <a href="#setOneTimeToken">setOneTimeToken</a>               | 被呼时设置接收到的消息中的token                              |
+| <a href="#setVCRTCListener">setVCRTCListener</a>             | 设置会中监听                                                   |
+| <a href="#setApiServer">setApiServer</a>                     | 设置api服务器（仅对当次入会生效，不设置则使用VCRTCPreferences保存的服务器地址）|
+| <a href="#setLivingRecorderServer">setLivingRecorderServer</a> | 设置录制直播服务器，优先级高于偏好设置，如果不设置则为偏好设置值。    |
+| <a href="#setAccount">setAccount</a>                         | 设置自己的账号                                                 |
+| <a href="#setOemID">setOemID</a>                             | 设置OemID                                                     |
+| <a href="#setCheckdup">setCheckdup</a>                       | 检查重复参会者                                                 |
+| <a href="#setHideMea">setHideMe</a>                          | 设置隐身入会                                                  |
+| <a href="#setCallType">setCallType</a>                       | 设置呼叫类型                                                  |
+| <a href="#setClayout">setClayout</a>                         | 转发模式下，控制接收大小视频流的数量                              |
+| <a href="#setTime">setTime</a>                               | 被呼时设置接收到的消息中的呼叫时间。                              |
+| <a href="#setBsskey">setBsskey</a>                           | 点对点被呼时设置接收到的消息中的bsskey                           |
+| <a href="#setOneTimeToken">setOneTimeToken</a>               | 被呼时设置接收到的消息中的token                                 |
 | <a href="#connect">connect</a>                               | 建立连接                                                     |
 | <a href="#disconnect">disconnect</a>                         | 断开链接                                                     |
-| <a href="#getParticipants">getParticipants</a>               | 获取参会人列表                                               |
-| <a href="#isVMR">isVMR</a>                                   | 是否是讲堂                                                   |
-| <a href="#canRecord">canRecord</a>                           | 是否允许录制                                                 |
-| <a href="#canLive">canLive</a>                               | 是否允许直播                                                 |
-| <a href="#reconnectNewSessionCall">reconnectNewSessionCall</a> | 重新入会                                                     |
-| <a href="#reconnectOnlyMediaCall">reconnectOnlyMediaCall</a> | 重新建立媒体连接（多用于断网重连）                           |
+| <a href="#getParticipants">getParticipants</a>               | 获取参会人列表                                                |
+| <a href="#isVMR">isVMR</a>                                   | 是否是讲堂                                                    |
+| <a href="#canRecord">canRecord</a>                           | 是否允许录制                                                  |
+| <a href="#canLive">canLive</a>                               | 是否允许直播                                                  |
+| <a href="#reconnectNewSessionCall">reconnectNewSessionCall</a>| 重新入会                                                     |
+| <a href="#reconnectOnlyMediaCall">reconnectOnlyMediaCall</a> | 重新建立媒体连接（多用于断网重连）                                |
 | <a href="#updateClayout">updateClayout</a>                   | 更新clayout                                                  |
-| <a href="#getCameraDevices">getCameraDevices</a>             | 获取摄像头设备列表                                           |
-| <a href="#switchCamera">switchCamera</a>                     | 切换摄像头                                                   |
-| <a href="#updateVideoImage">updateVideoImage</a>             | 更新关闭摄像头时发送的图片                                   |
-| <a href="#setVideoEnable">setVideoEnable</a>                 | 关闭/打开摄像头                                              |
-| <a href="#setAudioEnable">setAudioEnable</a>                 | 关闭/打开麦克风                                              |
-| <a href="#setAudioModelEnable">setAudioModelEnable</a>       | 关闭/打开语音模式                                            |
-| <a href="#sendPresentationImage">sendPresentationImage</a>   | 发送双流图片（上传文件方式）                                 |
-| <a href="#sendPresentationBitmap">sendPresentationBitmap</a> | 发送双流图片（视频流方式）                                   |
-| <a href="#sendPresentationScreen">sendPresentationScreen</a> | 屏幕共享                                                     |
-| <a href="#sendPresentationVideo">sendPresentationVideo</a>   | 发送视频文件（仅支持Y4M(YUV4MPEG2)格式视频文件）             |
-| <a href="#sendPresentationRawH264">sendPresentationRawH264</a> | 发送H.264视频流                                              |
-| <a href="#putRawH264Data">putRawH264Data</a>                 | 添加H.264数据                                                |
-| <a href="#stopPresentation">stopPresentation</a>             | 停止发双流                                                   |
-| <a href="#getMediaStatistics">getMediaStatistics</a>         | 获取通讯媒体流参数                                           |
+| <a href="#getCameraDevices">getCameraDevices</a>             | 获取摄像头设备列表                                             |
+| <a href="#switchCamera">switchCamera</a>                     | 切换摄像头                                                    |
+| <a href="#updateVideoImage">updateVideoImage</a>             | 更新关闭摄像头时发送的图片                                       |
+| <a href="#setVideoEnable">setVideoEnable</a>                 | 关闭/打开摄像头                                                |
+| <a href="#setAudioEnable">setAudioEnable</a>                 | 关闭/打开麦克风                                                |
+| <a href="#setAudioModelEnable">setAudioModelEnable</a>        | 关闭/打开语音模式                                             |
+| <a href="#sendPresentationImage">sendPresentationImage</a>    | 发送双流图片（上传文件方式）                                     |
+| <a href="#sendPresentationBitmap">sendPresentationBitmap</a>  | 发送双流图片（视频流方式）                                        |
+| <a href="#sendPresentationScreen">sendPresentationScreen</a>  | 屏幕共享                                                      |
+| <a href="#sendPresentationVideo">sendPresentationVideo</a>    | 发送视频文件（仅支持Y4M(YUV4MPEG2)格式视频文件）                   |
+| <a href="#sendPresentationRawH264">sendPresentationRawH264</a>| 发送H264视频流                                                 |
+| <a href="#putRawH264Data">putRawH264Data</a>                  | 添加H264数据                                                  |
+| <a href="#stopPresentation">stopPresentation</a>              | 停止发双流                                                     |
+| <a href="#getMediaStatistics">getMediaStatistics</a>          | 获取通讯媒体流参数                                             |
 
 
 
-#### VCRTCListener回调方法列表
+### VCRTCListener回调方法列表
 
 | 方法                                                         | 描述                                   |
 | ------------------------------------------------------------ | -------------------------------------- |
@@ -129,7 +129,7 @@
 | <a href="#onConferenceUpdate">onConferenceUpdate</a>         | 会议室状态更新                         |
 | <a href="#onError">onError</a>                               | 错误回调                               |
 
-#### VCRegistrationUtil方法列表
+### VCRegistrationUtil方法列表
 
 | 方法                                | 描述                      |
 | ---------------------------------- | ------------------------- |
@@ -449,7 +449,7 @@ vcrtc.setVCRTCListener(listener);
 ​	开始发送H264视频流
 
 <h6 name="putRawH264Data">36. putRawH264Data(byte[] data)</h6>
-​	添加H.264数据
+​	添加H264数据
 
 <h6 name="stopPresentation">37. stopPresentation()</h6>
 ​	停止发双流，包括停止图片共享、屏幕共享等发送双流状态。

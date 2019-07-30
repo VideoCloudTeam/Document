@@ -2,9 +2,9 @@
 
 [TOC]
 
-### 快速开始
+## 快速开始
 
-##### 1、前提条件
+### 1、前提条件
 
 - `iOS 9.0+`真机 (iPhone或iPad)。
 - 请确保你的项目设置有效的开发者签名。
@@ -12,20 +12,20 @@
 注意: 请使用真机运行实例代码,模拟器可能因为功能缺失而无法运行示例代码。
 ```
 
-##### 2、SDK集成说明
+### 2、SDK集成说明
 
 - 下载` iOS-SDK `,并解压
 - 新建工程,并且添加目录video-sdk中的 `VCRTC.framework` & ` WebRTC.framework` 到工程中
-![](../_images/ios/WechatIMG611.jpeg)
+![](assets/WechatIMG611.jpeg)
 - 确保Embedded Binaries 和 Linked Frameworks and Libraries 中添加 `VCRTC.framework` & `WebRTC.framework`。
-![](../_images/ios/2.png)
+![](assets/2.png)
 - 关闭`bitcode `
-![](../_images/ios/3.png)
+![](assets/3.png)
 - 向 Other Linker Flags 添加 `-ObjC` & `-lc++`
-![](../_images/ios/4.png)
+![](assets/4.png)
 - 在`info.plist` 中 - 添加 麦克风 、相机使用权限
 ![](https://raw.githubusercontent.com/zijingcloud/iOS-SDK/master/Docs/images/vcrtc_install_privacy.png)
-##### 3、初始化
+### 3、初始化
 
 
 ```objc
@@ -45,7 +45,7 @@
    
 ```
 
-##### 4、 初始化参数设置
+### 4、 初始化参数设置
 ```objc   
     //入会类型配置
     //入会类型配置
@@ -60,7 +60,7 @@
 
 
 ```
-##### 5、加入会议
+### 5、加入会议
 
 ```objc
   
@@ -71,7 +71,7 @@
     }];
 ```
 
-##### 6、接收回调信息
+### 6、接收回调信息
 
 ```objc
 #pragma mark - VCRtcModuleDelegate 接收会中音视频处理
@@ -116,7 +116,7 @@
 }
 ```
 
-##### 7、离开会议
+### 7、离开会议
 
 ```objc
     [self.vcrtc exitChannelSuccess:^(id  _Nonnull response) {
