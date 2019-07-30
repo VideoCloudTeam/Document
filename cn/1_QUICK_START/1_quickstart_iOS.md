@@ -9,15 +9,22 @@
 ### SDK集成说明
 
 - 下载` iOS-SDK `,并解压
+
 - 新建工程,并且添加目录video-sdk中的 `VCRTC.framework` & ` WebRTC.framework` 到工程中
-![](../_images/ios/WechatIMG611.jpeg)
+  ![](../_images/ios/WechatIMG611.jpeg)
+
 - 确保Embedded Binaries 和 Linked Frameworks and Libraries 中添加 `VCRTC.framework` & `WebRTC.framework`。
-![](../_images/ios/2.png)
+  ![](../_images/ios/2.png)
+
 - 关闭`bitcode `
-![](../_images/ios/3.png)
+  ![](../_images/ios/3.png)
+
 - 向 Other Linker Flags 添加 `-ObjC` & `-lc++`
-![](../_images/ios/4.png)
-- 在`info.plist` 中 - 添加 麦克风 、相机使用权限![](https://raw.githubusercontent.com/zijingcloud/iOS-SDK/master/Docs/images/vcrtc_install_privacy.png)
+  ![](../_images/ios/4.png)
+
+- 在`info.plist` 中 - 添加 麦克风 、相机使用权限
+
+  ![](https://raw.githubusercontent.com/zijingcloud/iOS-SDK/master/Docs/images/vcrtc_install_privacy.png)
 
 
 
