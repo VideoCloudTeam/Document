@@ -1,4 +1,4 @@
-### 前提条件：
+### 前提条件
 
 * Android SDK API Level >= 16
 * Android Studio 3.0以上版本
