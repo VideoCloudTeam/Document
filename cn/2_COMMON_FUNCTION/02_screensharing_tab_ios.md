@@ -10,45 +10,45 @@
 
 选中Xcode -> File -> New -> Target -> Broadcast Upload Extension (**注意: 新建时不要勾选Include UI Extension`**)
 
-![](../../%E6%96%87%E6%A1%A3/SDK%E6%96%87%E6%A1%A3/assets/6.png)
+![](../_images/ios/6.png)
 
-![7](../../%E6%96%87%E6%A1%A3/SDK%E6%96%87%E6%A1%A3/assets/7.png)
+![7](../_images/ios/7.png)
 
-![](../../%E6%96%87%E6%A1%A3/SDK%E6%96%87%E6%A1%A3/assets/8.png)
+![](../_images/ios/8.png)
 
 **新建后会创建 `SampleHandler.h` 和 `SampleHandler.m`两个文件**
 
-![](../../%E6%96%87%E6%A1%A3/SDK%E6%96%87%E6%A1%A3/assets/14.png)
+![](../_images/ios/14.png)
 
 2. 在 apple developer 中创建 相应的group id，并在Xcode中App 和 Extension打开App Groups
 
-![](../../%E6%96%87%E6%A1%A3/SDK%E6%96%87%E6%A1%A3/assets/9.png)
+![](../_images/ios/9.png)
 
 3. 把`ZJRTCScreenShare.framework`拖入项目中
 
-![](../../%E6%96%87%E6%A1%A3/SDK%E6%96%87%E6%A1%A3/assets/10.png)
+![](../_images/ios/10.png)
 
-![](../../%E6%96%87%E6%A1%A3/SDK%E6%96%87%E6%A1%A3/assets/11.png)
+![](../_images/ios/11.png)
 
 **注意:第一步新建的`Broadcast Upload Extension`这个项目要勾选上**
 
 **在Link Binary with Libraries 中添加 `ReplayKit.framework`**
 
-![](../../%E6%96%87%E6%A1%A3/SDK%E6%96%87%E6%A1%A3/assets/13.png)
+![](../_images/ios/13.png)
 
-![](../../%E6%96%87%E6%A1%A3/SDK%E6%96%87%E6%A1%A3/assets/12.png)
+![](../_images/ios/12.png)
 
 
 
-![16](../../%E6%96%87%E6%A1%A3/SDK%E6%96%87%E6%A1%A3/assets/16.png)
+![16](../_images/ios/16.png)
 
 **添加App Groups**
 
 `tagets`->`Capabilities`->`AppGroups`状态为ON 
 
-![17](../../%E6%96%87%E6%A1%A3/SDK%E6%96%87%E6%A1%A3/assets/17.png)
+![17](../_images/ios/17.png)
 
-![18](../../%E6%96%87%E6%A1%A3/SDK%E6%96%87%E6%A1%A3/assets/18.png)
+![18](../_images/ios/18.png)
 
 
 
