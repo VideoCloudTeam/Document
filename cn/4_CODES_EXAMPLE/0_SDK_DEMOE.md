@@ -1,9 +1,7 @@
-# 介绍
+##SDK及Demo（示例代码）下载
 
-本文提供SDK和Demo下载地址
-
-| SDK&Demo | 下载地址                                      |
+| 平台 | 下载地址                                      |
 | --------- | --------------------------------------------- |
-| web 端    | https://github.com/VideoCloudTeam/WEB-SDK.git |
-| ios       |  https://github.com/VideoCloudTeam/iOS-SDK.git           |
-| Android   |   https://github.com/VideoCloudTeam/Android-SDK.git          |                                           |
+| Android | [前往GitHub](https://github.com/VideoCloudTeam/Android-SDK) |
+| iOS    | [前往GitHub](https://github.com/VideoCloudTeam/iOS-SDK) |
+| Web | [前往GitHub](https://github.com/VideoCloudTeam/WEB-SDK) |
