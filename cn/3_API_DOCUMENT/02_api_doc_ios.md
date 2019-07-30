@@ -1,9 +1,5 @@
 ## API Reference for iOS
 
-[TOC]
-
-## API参考
-
 ### 会议管理
 
 |                             方法                             |          功能          |
