@@ -26,7 +26,7 @@
 
   ![](https://raw.githubusercontent.com/zijingcloud/iOS-SDK/master/Docs/images/vcrtc_install_privacy.png)
 
-###初始化
+### 初始化
 
 
 ```objc
