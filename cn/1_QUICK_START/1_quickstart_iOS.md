@@ -1,6 +1,4 @@
-## 快速开始
-
-### 1、前提条件
+### 前提条件
 
 - `iOS 9.0+`真机 (iPhone或iPad)。
 - 请确保你的项目设置有效的开发者签名。
@@ -8,7 +6,7 @@
 注意: 请使用真机运行实例代码,模拟器可能因为功能缺失而无法运行示例代码。
 ```
 
-### 2、SDK集成说明
+### SDK集成说明
 
 - 下载` iOS-SDK `,并解压
 - 新建工程,并且添加目录video-sdk中的 `VCRTC.framework` & ` WebRTC.framework` 到工程中
@@ -21,7 +19,7 @@
 ![](assets/4.png)
 - 在`info.plist` 中 - 添加 麦克风 、相机使用权限
 ![](https://raw.githubusercontent.com/zijingcloud/iOS-SDK/master/Docs/images/vcrtc_install_privacy.png)
-### 3、初始化
+### 初始化
 
 
 ```objc
@@ -41,7 +39,8 @@
    
 ```
 
-### 4、 初始化参数设置
+初始化参数设置
+
 ```objc   
     //入会类型配置
     //入会类型配置
@@ -56,7 +55,7 @@
 
 
 ```
-### 5、加入会议
+### 加入会议
 
 ```objc
   
@@ -67,7 +66,7 @@
     }];
 ```
 
-### 6、接收回调信息
+### 接收回调信息
 
 ```objc
 #pragma mark - VCRtcModuleDelegate 接收会中音视频处理
@@ -112,7 +111,7 @@
 }
 ```
 
-### 7、离开会议
+### 离开会议
 
 ```objc
     [self.vcrtc exitChannelSuccess:^(id  _Nonnull response) {
