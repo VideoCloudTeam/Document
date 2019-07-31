@@ -53,8 +53,8 @@
 ```红色
 注意: 
 Group Identifier 由苹果开发者提供,具体请查看官方文档。  
-Group Identifier 主要在主程序和扩展程序交互数据时使用。  
-所以使用SDK中提供的“会中屏幕录制”服务, 为主程序和拓展程序的 Bundle Identifier 绑定同一个 Group Identifier 至关重要。
+Group Identifier 主要在主程序和扩展程序交互数据时使用,所以使用SDK中提供的“会中屏幕录制”服务,  
+为主程序和拓展程序的 Bundle Identifier 绑定同一个 Group Identifier 至关重要。
 ```
 
 ##### 代码示例
