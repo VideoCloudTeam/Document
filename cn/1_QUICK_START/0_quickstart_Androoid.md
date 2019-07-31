@@ -4,7 +4,7 @@
 * Android Studio 3.0以上版本
 * APP要求Android 4.1或以上设备
 
-###添加SDK
+### 添加SDK
 
 1. 复制 `vcrtc-v*.aar`文件到app的libs下 
 
