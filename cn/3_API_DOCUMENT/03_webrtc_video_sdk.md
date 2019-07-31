@@ -11,12 +11,13 @@
 
 主要参数
 
-| node       | 会议服务器的主机名或IP地址，请调用apiServer/api/v3/meet/checkJoin.shtml获取，参见《会中管理文档API》 |
-| ---------- | ------------------------------------------------------------ |
-| conference | 会议室地址或短号                                             |
-| name       | 会议中显示的本人名字                                         |
-| bandwidth  | 上下行带宽，可以为空(null)                                   |
-| call_type  | 呼叫类型 可选  默认通过WebRTC 进行视频呼叫                   |
+
+| node       									| 会议服务器的主机名或IP地址,<br/>请调用apiServer/api/v3/meet/checkJoin.shtml获取，参见《会中管理文档API》 |
+| ------------------------------------------- | --------- |
+| <a>conference</a> | 会议室地址或短号     |
+| <a>name</a>       | 会议中显示的本人名字         |
+| <a>bandwidth</a>  | 上下行带宽，可以为空(null)                                   |
+| <a>call_type</a>  | 呼叫类型 可选  默认通过WebRTC 进行视频呼叫                   |
 |            | “presentation” —只接收演示（辅流）的WebRTC呼叫               |
 |            | “screen” — 只屏幕共享的WebRTC 呼叫                           |
 |            | “audioonly” — 纯音频 WebRTC 呼叫                             |
@@ -34,7 +35,7 @@
 
 | pin       | 入会密码。如果会议室没有设置入会密码，参数为null |
 | --------- | ------------------------------------------------ |
-| extension | 如直拨的会议室，该参数应为null                   |
+| <a>extension</a> | 如直拨的会议室，该参数应为null                   |
 
 返回值
 
@@ -50,7 +51,7 @@
 
 | 参数    | 含义                                      |
 | ------- | ----------------------------------------- |
-| setting | true:关闭本地摄像头  false:开启本地摄像头 |
+| <a>setting</a> | true:关闭本地摄像头  false:开启本地摄像头 |
 
 返回值
 
@@ -66,7 +67,7 @@
 
 | 参数    | 含义                                      |
 | ------- | ----------------------------------------- |
-| setting | true:关闭本地麦克风  false:开启本地麦克风 |
+| <a>setting </a>| true:关闭本地麦克风  false:开启本地麦克风 |
 
 返回值
 
@@ -116,7 +117,7 @@
 
 | 参数      | 描述                                           |
 | --------- | ---------------------------------------------- |
-| call_type | “presentation” —只接收演示（辅流）的WebRTC呼叫 |
+| <a>call_type</a> | “presentation” —只接收演示（辅流）的WebRTC呼叫 |
 |           | “screen” — 只屏幕共享的WebRTC 呼叫             |
 |           | “audioonly” — 纯音频 WebRTC 呼叫               |
 |           | “recvonly” — 只收不发的 WebRTC 呼叫            |
@@ -131,7 +132,7 @@
 
 | 参数    | 含义           |
 | ------- | -------------- |
-| message | 发送的文字信息 |
+| <a>message </a>| 发送的文字信息 |
 
 返回值
 
@@ -143,7 +144,7 @@
 
 | 参数     | 含义                                 |
 | -------- | ------------------------------------ |
-| referral | true 不清除辅流；false/none 清除辅流 |
+| <a>referral </a>| true 不清除辅流；false/none 清除辅流 |
 
 返回值
 
@@ -155,7 +156,7 @@
 
 | 参数      | 含义                                  |
 | --------- | ------------------------------------- |
-| call_type | “screen”:开始屏幕共享；null：停止共享 |
+| <a>call_type</a> | “screen”:开始屏幕共享；null：停止共享 |
 
 返回值
 
@@ -219,10 +220,10 @@ outgoing:{
 
 | destination | 拟外呼的参会者地址或短号                                     |
 | ----------- | ------------------------------------------------------------ |
-| protocol    | 目前支持的协议有 “sip”, “h323”, “mssip”，“phone”,“auto”      |
-| Role        | 角色。“guest”：访客；“chair”:主持人。默认值为”chair”         |
-| cb          | 外呼后执行的回调函数。系统将给回调函数传递一个result对象，对象中包含一组（一般是一个）云平台创建的准参会者对应的唯一标识uuid |
-| params      | params是以下字段的任意组合，都是可选项:  <br>   presentation_uri:“rtmp”第二路视频（演示流）推送目的url<br>   streaming:是否是流媒体，用于流媒体直播   <br>   remote_display_name 显示在会议参会者清单中的名字 |
+| <a>protocol </a>   | 目前支持的协议有 “sip”, “h323”, “mssip”，“phone”,“auto”      |
+| <a>Role  </a>      | 角色。“guest”：访客；“chair”:主持人。默认值为”chair”         |
+| <a>cb     </a>     | 外呼后执行的回调函数。系统将给回调函数传递一个result对象，对象中包含一组（一般是一个）云平台创建的准参会者对应的唯一标识uuid |
+| <a>params  </a>    | params是以下字段的任意组合，都是可选项:  <br>   presentation_uri:“rtmp”第二路视频（演示流）推送目的url<br>   streaming:是否是流媒体，用于流媒体直播   <br>   remote_display_name 显示在会议参会者清单中的名字 |
 
 **返回值**
 
@@ -234,7 +235,7 @@ outgoing:{
 
 | 参数    | 含义                  |
 | ------- | --------------------- |
-| setting | true:锁定  false:解锁 |
+| <a>setting</a> | true:锁定  false:解锁 |
 
 **返回值**
 
@@ -246,7 +247,7 @@ outgoing:{
 
 | 参数    | 含义                                          |
 | ------- | --------------------------------------------- |
-| setting | true:设置所有访客静音  false:取消所有访客静音 |
+| <a>setting</a> | true:设置所有访客静音  false:取消所有访客静音 |
 
 **返回值**
 
@@ -257,8 +258,8 @@ outgoing:{
 
 | 参数    | 含义                                          |
 | ------- | --------------------------------------------- |
-| setting | true:设置所有访客静音  false:取消所有访客静音 |
-| uuid    | 参会者的唯一标识                              |
+| <a>setting</a> | true:设置所有访客静音  false:取消所有访客静音 |
+| <a>uuid </a>   | 参会者的唯一标识                              |
 
 **返回值**
 
@@ -273,9 +274,9 @@ outgoing:{
 **主要参数**
 
 |  参数   | 含义                                             |
-| :-----: | ------------------------------------------------ |
-|  uuid   | 用于唯一标识参会者                               |
-| setting | 指定参会者的新的角色。chair:主持人    guest:访客 |
+| ----- | ------------------------------------------------ |
+|  <a>uuid  </a> | 用于唯一标识参会者                               |
+| <a>setting</a> | 指定参会者的新的角色。chair:主持人    guest:访客 |
 
 **返回值**
 
@@ -288,8 +289,8 @@ outgoing:{
 **主要参数**
 
 | 参数 | 含义               |
-| :--: | ------------------ |
-| uuid | 用于唯一标识参会者 |
+| -- | ------------------ |
+| <a>uuid</a> | 用于唯一标识参会者 |
 
 **返回值**
 
@@ -303,7 +304,7 @@ outgoing:{
 
 | Layout  | (主持人)视频布局  1:0 一个大屏 ， 4:0 等分屏 ， 1:7  1大7小布局      1:21  1大21小布局 |
 | ------- | ------------------------------------------------------------ |
-| Glayout | 访客布局  1:0 一个大屏 ， 4:0 等分屏 ， 1：7  1大7小布局      1:21  1大21小布局 ，    2:21  2大21小布局 |
+| <a>Glayout</a> | 访客布局  1:0 一个大屏 ， 4:0 等分屏 ， 1：7  1大7小布局      1:21  1大21小布局 ，    2:21  2大21小布局 |
 
 **返回值**
 
@@ -316,9 +317,9 @@ outgoing:{
 **参数**
 
 |  参数   | 含义               |
-| :-----: | ------------------ |
-|  uuid   | 用于唯一标识参会者 |
-| newName | 与会新的显示名称   |
+| ----- | ------------------ |
+|  <a>uuid </a>  | 用于唯一标识参会者 |
+| <a>newName</a> | 与会新的显示名称   |
 
 **返回值**
 
@@ -332,8 +333,8 @@ outgoing:{
 
 | 参数    | 含义                          |
 | ------- | ----------------------------- |
-| uuid    | 参会者的唯一标识              |
-| setting | true:设置禁画  false:取消禁画 |
+| <a>uuid</a>    | 参会者的唯一标识              |
+| <a>setting </a>| true:设置禁画  false:取消禁画 |
 
 **返回值**
 
@@ -349,8 +350,8 @@ outgoing:{
 
 | 参数    | 含义                          |
 | ------- | ----------------------------- |
-| uuid    | 参会者的唯一标识              |
-| setting | true:设置禁音  false:取消禁音 |
+| <a>uuid  </a>  | 参会者的唯一标识              |
+| <a>setting</a> | true:设置禁音  false:取消禁音 |
 
 **返回值**
 
@@ -366,8 +367,8 @@ outgoing:{
 
 | 参数    | 含义                          |
 | ------- | ----------------------------- |
-| uuid    | 参会者的唯一标识              |
-| setting | true:设置闭音  false:取消闭音 |
+| <a>uuid  </a>  | 参会者的唯一标识              |
+| <a>setting</a> | true:设置闭音  false:取消闭音 |
 
 **返回值**
 
@@ -383,8 +384,8 @@ outgoing:{
 
 | 参数    | 含义                          |
 | ------- | ----------------------------- |
-| uuid    | 参会者的唯一标识              |
-| setting | true:取消延时  false:恢复延时 |
+| <a>uuid </a>   | 参会者的唯一标识              |
+| <a>setting</a> | true:取消延时  false:恢复延时 |
 
 **返回值**
 
@@ -412,9 +413,9 @@ outgoing:{
 #### 主要参数
 | 参数    | 含义                          |
 | ------- | ----------------------------- |
-| url    | 一个可以应用到< video >的本地媒体流URL 。对单收或单控呼叫，该值为空 |
-| conference_extension | 只有呼叫IVR时才会设置该值。 “standard”表示呼叫的是标准的IVR；“mssip”表示呼叫的是lync/skype for business的网关 |
-|pin_status|入会密码状态：<br/> - “none” —主持人和访客都没有设置入会密码<br/> - “required” — 表示主持人和访客都设置了入会密码<br/> - “optional” —表示设置了主持人入会密码，但没有设置访客密码|
+| <a>url </a>   | 一个可以应用到< video >的本地媒体流URL 。对单收或单控呼叫，该值为空 |
+| <a>conference_extension </a>| 只有呼叫IVR时才会设置该值。 “standard”表示呼叫的是标准的IVR；“mssip”表示呼叫的是lync/skype for business的网关 |
+| <a>pin_status </a>      |入会密码状态：<br/> - “none” —主持人和访客都没有设置入会密码<br/> - “required” — 表示主持人和访客都设置了入会密码<br/> - “optional” —表示设置了主持人入会密码，但没有设置访客密码|
 
 在实现此回调函数时，开发者应根据返回值使用合适的入会密码（可为空）和接驳号（如会议室短号、空等）调用connect函数继续完成连接。该回调函数可能会被触发多次。
 
@@ -426,7 +427,7 @@ connect函数执行成功，该回调函数将被触发，该函数可能被触�
 #### 主要参数
 | 参数    | 含义                          |
 | ------- | ----------------------------- |
-| url    | 一个可应用到< video >的远程媒体流URL  ,可以为空值|
+| <a>url </a>   | 一个可应用到< video >的远程媒体流URL  ,可以为空值|
 
 <!-- onError -->
 ### onError(err)
@@ -437,7 +438,7 @@ connect函数执行成功，该回调函数将被触发，该函数可能被触�
 #### 主要参数
 | 参数    | 含义                          |
 | ------- | ----------------------------- |
-| err    | 错误描述信息|
+| <a>err </a>   | 错误描述信息|
 
 <!-- onDisconnect -->
 ### onDisconnect(reason)
@@ -446,7 +447,7 @@ connect函数执行成功，该回调函数将被触发，该函数可能被触�
 #### 主要参数
 | 参数    | 含义                          |
 | ------- | ----------------------------- |
-| reason    | 断开原因|
+| <a>reason</a>    | 断开原因|
 
 
 <!-- onHoldResume -->
@@ -456,7 +457,7 @@ connect函数执行成功，该回调函数将被触发，该函数可能被触�
 #### 主要参数
 | 参数    | 含义                          |
 | ------- | ----------------------------- |
-| setting    | true:挂起  false:恢复|
+| <a>setting</a>    | true:挂起  false:恢复|
 
 
 <!-- onLayoutUpdate -->
@@ -466,8 +467,8 @@ connect函数执行成功，该回调函数将被触发，该函数可能被触�
 #### 主要参数
 | 参数    | 含义                          |
 | ------- | ----------------------------- |
-| view    | 会议室布局包含以下几种：<br/> - “1:0” —一个大屏<br/> - “1:7” — 1大7小布局 <br/> - “1:21” — 1大21布局 |
-|participants	|以uuid为标识的参会者顺序列表，依次为当前主讲人… 	|
+| <a>view</a>    | 会议室布局包含以下几种：<br/> - “1:0” —一个大屏<br/> - “1:7” — 1大7小布局 <br/> - “1:21” — 1大21布局 |
+|   <a>participants</a>	|以uuid为标识的参会者顺序列表，依次为当前主讲人… 	|
 #### 示例
 ```
 {
@@ -483,8 +484,8 @@ connect函数执行成功，该回调函数将被触发，该函数可能被触�
 #### 主要参数
 | 参数    | 含义                          |
 | ------- | ----------------------------- |
-| setting    | true:演示流已开始  false:演示已结束 	|
-|presenter		|演示者名字，只有在setting为true时可以设置，false时为null	|
+| <a>setting  </a>  | true:演示流已开始  false:演示已结束 	|
+|  <a>presenter</a>		|演示者名字，只有在setting为true时可以设置，false时为null	|
 
 
 <!-- onPresentationReload -->
@@ -494,7 +495,7 @@ connect函数执行成功，该回调函数将被触发，该函数可能被触�
 #### 主要参数
 | 参数    | 含义                          |
 | ------- | ----------------------------- |
-| url    | 新的演示帧对应的图片URL 	|
+| <a>url</a>    | 新的演示帧对应的图片URL 	|
 
 <!-- onParticipantCreate -->
 ### onParticipantCreate(participant)
@@ -506,23 +507,23 @@ participant	新参会者对象 ，对象详细信息请参照参会者详情
 
 | 参数    | 含义                          |
 | ------- | ----------------------------- |
-| call_direction    | ”in”:主动呼入；”out”:会议室外呼 	|
-|display_name		|参会者显示名称				|
-|Encryption			|加密否。 “on”:加密  “off”:不加密	|
-|has_media|参会者是否有媒体标识	|
-|is_audio_only	|是否为纯音频呼叫:yes 或no		|
-|is_external	|是否是外部参会者标识:true/false|
-|is_muted|是否被静音:yes或 no	|
-|Streaming	|是否是直播或录制媒体流：true/false		|
-|is_video_call		|是否为视频呼叫。“YES”为视频呼叫		|
-|protocol		|参会者通讯协议			|
-|role			|参会者角色。 Chair:主持人 guest:访客		|
-|service_type |服务类型:<br/> - “connecting” —外呼参会者连接建立中<br/> - “waiting_room” —等待加入被锁定的会议室<br/> - “ivr” —等待输入入会密码<br/> - “conference” —会议室呼叫<br/> - “gateway” —点到点呼叫|
-|spotlight		|设置参会者“焦点”的UNIX时间戳		|
-|start_time			|入会时间（UNIX 秒格式）		|
-|uuid			|参会者唯一标识				|
-|uri		|参会者uri		|
-|vendor		|入会者使用的终端或浏览器的厂商标识			|
+| <a>call_direction</a>    | ”in”:主动呼入；”out”:会议室外呼 	|
+| <a>display_name</a>		|参会者显示名称				|
+| <a>Encryption</a>			|加密否。 “on”:加密  “off”:不加密	|
+| <a>has_media</a> |参会者是否有媒体标识	|
+| <a>is_audio_only</a>	|是否为纯音频呼叫:yes 或no		|
+| <a>is_external</a>	|是否是外部参会者标识:true/false|
+| <a>is_muted</a> |是否被静音:yes或 no	|
+| <a>Streaming</a>	|是否是直播或录制媒体流：true/false		|
+| <a>is_video_call</a>		|是否为视频呼叫。“YES”为视频呼叫		|
+| <a>protocol</a>		|参会者通讯协议			|
+| <a>role</a>			|参会者角色。 Chair:主持人 guest:访客		|
+|<a>service_type</a> |服务类型:<br/> - “connecting” —外呼参会者连接建立中<br/> - “waiting_room” —等待加入被锁定的会议室<br/> - “ivr” —等待输入入会密码<br/> - “conference” —会议室呼叫<br/> - “gateway” —点到点呼叫|
+| <a>spotlight</a>		|设置参会者“焦点”的UNIX时间戳		|
+| <a>start_time</a>			|入会时间（UNIX 秒格式）		|
+| <a>uuid</a>			|参会者唯一标识				|
+| <a>uri</a>		|参会者uri		|
+| <a>vendor</a>		|入会者使用的终端或浏览器的厂商标识			|
 
 
 <!-- onParticipantUpdate -->
@@ -532,7 +533,7 @@ participant	新参会者对象 ，对象详细信息请参照参会者详情
 #### 主要参数
 | 参数    | 含义                          |
 | ------- | ----------------------------- |
-| participant    | 有信息更新的参会者对象。对象详细信息请参照“onParticipantCreate” 	|
+| <a>participant</a>    | 有信息更新的参会者对象。对象详细信息请参照“onParticipantCreate” 	|
 
 
 <!-- onParticipantDelete -->
@@ -542,7 +543,7 @@ participant	新参会者对象 ，对象详细信息请参照参会者详情
 #### 主要参数
 | 参数    | 含义                          |
 | ------- | ----------------------------- |
-| participant    | 离开会议室的参会者对象。 该对象只包含一个uuid属性 	|
+| <a>participant</a>    | 离开会议室的参会者对象。 该对象只包含一个uuid属性 	|
 
 
 
@@ -553,7 +554,7 @@ participant	新参会者对象 ，对象详细信息请参照参会者详情
 #### 主要参数
 | 参数    | 含义                          |
 | ------- | ----------------------------- |
-| message对象    |此对象包含以下属性: <br/> - origin —— 发送消息的参会者名称<br/> - uuid —— 发送消息的参会者唯一标识<br/> - type —— 消息MIME类型<br/> - payload —— 文字内容|
+| <a>message对象</a>    |此对象包含以下属性: <br/> - origin —— 发送消息的参会者名称<br/> - uuid —— 发送消息的参会者唯一标识<br/> - type —— 消息MIME类型<br/> - payload —— 文字内容|
 
 <!-- onStageUpdate -->
 ### onStageUpdate(stage)
@@ -562,7 +563,7 @@ participant	新参会者对象 ，对象详细信息请参照参会者详情
 #### 主要参数
 | 参数    | 含义                          |
 | ------- | ----------------------------- |
-| Stage    |按顺序（当前主讲人排第一）排列的参会者对象数组。每个参会者对象的属性: <br/> - participant_uuid —— 参会者唯一标识<br/> - stage_index —— 参会者在”舞台“上的顺序编号<br/> - vad —— 语音状态: 0：未讲话  100：正在讲话|
+| <a>Stage</a>    |按顺序（当前主讲人排第一）排列的参会者对象数组。每个参会者对象的属性: <br/> - participant_uuid —— 参会者唯一标识<br/> - stage_index —— 参会者在”舞台“上的顺序编号<br/> - vad —— 语音状态: 0：未讲话  100：正在讲话|
 
 
 
@@ -573,7 +574,7 @@ participant	新参会者对象 ，对象详细信息请参照参会者详情
 #### 主要参数
 | 参数    | 含义                          |
 | ------- | ----------------------------- |
-| url    |可添加至< video >的全帧率演示流URL |
+| <a>url</a>    |可添加至< video >的全帧率演示流URL |
 
 
 <!-- onPresentationDisconnected -->
@@ -583,7 +584,7 @@ participant	新参会者对象 ，对象详细信息请参照参会者详情
 #### 主要参数
 | 参数    | 含义                          |
 | ------- | ----------------------------- |
-| reason    |中断原因 |
+| <a>reason</a>    |中断原因 |
 
 
 <!-- onScreenshareStopped -->
@@ -593,7 +594,7 @@ participant	新参会者对象 ，对象详细信息请参照参会者详情
 #### 主要参数
 | 参数    | 含义                          |
 | ------- | ----------------------------- |
-| reason    |中断原因 |
+| <a>reason</a>    |中断原因 |
 
 
 <!-- onScreenshareMissing -->
@@ -608,12 +609,12 @@ participant	新参会者对象 ，对象详细信息请参照参会者详情
 
 | 实例变量    | 描述                          |
 | ------- | ----------------------------- |
-| audio_source /video_source    |音频源/视频源: <br/> - null ：默认音频/视频源<br/> - false：未请求音频/视频源<br/> - uuid: uuid唯一标识的媒体源(只适用chrome)	|
-|recv_audio / recv_video	|是否接收音频/视频。True/false		|
-|bandwidth_in / bandwidth_out	|输入/输出带宽。 缺省值：1280；可被makeCall中的带宽参数覆盖		|
-|default_stun	|默认的stun服务器		|
-|turn_server	|Turn服务器， 格式为javascript选项。例如: <br/> {‘url’: ‘turn:10.0.0.1’, ‘username’: ‘user’, ‘credential’: ‘password’ }|
-|screenshare_api	|用于获取定制的chrome屏幕共享插件。缺省值为：ZjGetScreen	|
+| <a>audio_source /video_source</a>    |音频源/视频源: <br/> - null ：默认音频/视频源<br/> - false：未请求音频/视频源<br/> - uuid: uuid唯一标识的媒体源(只适用chrome)	|
+| <a>recv_audio / recv_video</a>	|是否接收音频/视频。True/false		|
+| <a>bandwidth_in / bandwidth_out</a>	|输入/输出带宽。 缺省值：1280；可被makeCall中的带宽参数覆盖		|
+| <a>default_stun</a>	|默认的stun服务器		|
+| <a>turn_server</a>	|Turn服务器， 格式为javascript选项。例如: <br/> {‘url’: ‘turn:10.0.0.1’, ‘username’: ‘user’, ‘credential’: ‘password’ }|
+| <a>screenshare_api</a>	|用于获取定制的chrome屏幕共享插件。缺省值为：ZjGetScreen	|
 
 <!-- 只读属性 -->
 ## 只读属性
@@ -621,11 +622,11 @@ participant	新参会者对象 ，对象详细信息请参照参会者详情
 
 | 实例变量    | 描述                          |
 | ------- | ----------------------------- |
-| role    |本端在会议中的角色。Chair:主持人；guest: “访客”	|
-|version	|云平台会议节点版本号 例如. “10 (25010.0.0)”	|
-|chat_enabled	|是否启用了文字聊天功能			|
-|service_type	|服务类型。“conference”：会议；”gateway”:点到点通讯		|
-|current_service_type		|当前服务类型, “conference” / “waiting_room” / “gateway” /等,参见“onParticipantCreate”	|
+| <a>role  </a>  |本端在会议中的角色。Chair:主持人；guest: “访客”	|
+| <a>version</a>	|云平台会议节点版本号 例如. “10 (25010.0.0)”	|
+| <a>chat_enabled</a>	|是否启用了文字聊天功能			|
+| <a>service_type</a>	|服务类型。“conference”：会议；”gateway”:点到点通讯		|
+| <a>current_service_type</a>		|当前服务类型, “conference” / “waiting_room” / “gateway” /等,参见“onParticipantCreate”	|
 
 
 
