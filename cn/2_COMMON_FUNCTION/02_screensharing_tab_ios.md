@@ -24,7 +24,7 @@
 
 ![](../_images/ios/9.png)
 
-3. 把`ZJRTCScreenShare.framework`拖入项目中
+3. 把`VCRTCScreenShare.framework`拖入项目中
 
 ![](../_images/ios/10.png)
 
@@ -54,10 +54,10 @@
 
 ##### 代码示例
 
-在`SampleHandler.m`中引用 `ZJRTCScreenShare.framework`
+在`SampleHandler.m`中引用 `VCRTCScreenShare.framework`
 
 ```objc
-#import <ZJRTCScreenShare/ZJRTCScreenShare.h>
+#import <VCRTCScreenShare/VCRTCScreenShare.h>
 ```
 
 ```objc
