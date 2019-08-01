@@ -6,16 +6,16 @@
 
 ### 2. 被呼功能准备
 
-- 需要导入ZjRegister.JS文件
+- 需要导入[VCRegister.js](https://github.com/VideoCloudTeam/WEB-SDK/blob/master/SDK/VCRegister.js)文件
 
-```
-  <script src="ZjRegister.js"></script>
+```javascript
+  <script src="VCRegister.js"></script>
 ```
 
-- 所有被呼功能均需要ZjRegister类的实例化对象完成。
+- 所有被呼功能均需要VCRegister类的实例化对象完成。
 
-```
-    var zjReg = new ZjRegister();
+```javascript
+    var vcReg = new VCRegister();
 ```
 
 
@@ -23,16 +23,16 @@
 
 被呼者，需要提前进行注册
 
-```
-    zjReg.register("emp.abc.cn", "123@abc.com", "123@1");
+```javascript
+    vcReg.register("emp.abc.cn", "123@abc.com", "123@1");
 ```
 
 
 
 ### 4. 注册监听全局被呼消息
 
-```
-zjReg.onIncoming = function (msg) {
+```javascript
+vcReg.onIncoming = function (msg) {
     // msg: 呼叫的消息
 }
 ```
