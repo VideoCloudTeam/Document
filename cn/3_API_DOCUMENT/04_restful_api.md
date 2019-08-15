@@ -14,8 +14,8 @@
 | **参数类别**    | **参数名称** | 类型                                        | **说明**          | 长度 | 是否必填 | **备注说明** |
 | ---------------| ------------ | ------------------------------------------ | ---------------- | ---- | -------- | ------------ |
 | 请求参数(Body)  | joinAccount     | varchar      | 入会短号/通讯地址                              | 60 | 是   |          |
-| 请求参数(Body)  | joinPwd         | varchar      | 入会认证密码,<br />点对点呼叫时,此参数无效。    | 15 | 否   |           |        
-| 请求参数(Body)  | participantName | varchar      | 入会后显示姓名                                 | 50 | 是   |          || 
+| 请求参数(Body)  | joinPwd         | varchar      | 入会认证密码,<br />点对点呼叫时,此参数无效。    | 15 | 否   |           |
+| 请求参数(Body)  | participantName | varchar      | 入会后显示姓名                                 | 50 | 是   |          ||
 
 响应参数:
 
@@ -366,7 +366,7 @@ https://mcuHost/api/services/<会议室地址或id>/<请求>
 返回参会者列表，每个参会者的详情请请参考partcipant_create事件。
 
 <!-- Override_layout命令 -->
-### Override_layout命令
+### override_layout命令
 该override_layout命令用于控制主持人或访客布局。命令的格式举例。
 
 #### 请求消息体实例
@@ -775,7 +775,7 @@ https://mcuHost/api/services/<会议地址或id>/events?token=<token_id><br/>
 #### 消息体字段
 | **字段**     | **含义**  |
 | -------| ----------   |
-| presenter_name |演示者姓名 | 
+| presenter_name |演示者姓名 |
 | presenter_uri       |演示者地址   |
 
 <!-- presentation_stop -->
