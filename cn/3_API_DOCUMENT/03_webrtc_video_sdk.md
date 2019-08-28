@@ -79,7 +79,7 @@
 
 通过传入不同的audio_source来切换麦克风
 
-###audio_source获取方法
+### audio_source获取方法
 
 基于chrome浏览器端通过navigator.mediaDevices.enumerateDevices()方法获取到媒体设备相应指定麦克风的deviceId再赋值给audio_source
 
@@ -89,11 +89,7 @@
 
 ![image-20190702084252931](../_images/web/image001.png)
 
-### 切换本地音频输出
-
-有问题
-
-### 切换本地麦克风
+## 切换本地摄像头
 
 #### 设置变量：rtc.video_source
 
@@ -109,7 +105,7 @@
 
 ![image-20190702084252931](../_images/web/image001.png)
 
-### 添加音视频/演示信道：addCall(call_type)
+## 添加音视频/演示信道：addCall(call_type)
 
 添加视频、演示或屏幕共享至现有会议中。添加视频一般在当前rtc.call_type为none时调用()。
 
