@@ -99,7 +99,7 @@
 
 通过传入不同的video_source来切换麦克风
 
-#### video_source获取方法
+### video_source获取方法
 
 基于chrome浏览器端通过navigator.mediaDevices.enumerateDevices()方法获取到媒体设备相应指定麦克风的deviceId再赋值给video_source
 
