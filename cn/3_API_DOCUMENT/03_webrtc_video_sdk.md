@@ -87,7 +87,7 @@
 >
 > 参考地址：https://developer.mozilla.org/zh-CN/docs/Web/API/MediaDevices/enumerateDevices
 
-![image-20190702084252931](/Users/blue/Library/Application Support/typora-user-images/image-20190702084252931.png)
+![image-20190702084252931](../_images/web/image001.png)
 
 ### 切换本地音频输出
 
@@ -107,7 +107,7 @@
 >
 > 参考地址：https://developer.mozilla.org/zh-CN/docs/Web/API/MediaDevices/enumerateDevices
 
-![image-20190702084252931](/Users/blue/Library/Application%20Support/typora-user-images/image-20190702084252931.png)
+![image-20190702084252931](../_images/web/image001.png)
 
 ### 添加音视频/演示信道：addCall(call_type)
 

@@ -228,13 +228,13 @@ https://mcuHost/api/services/<会议室地址或id>/<请求>
 | **请求字段名**     | **含义** |
 | ----| ----------   |
 | role          |入会角色。"guest"：访客；"chair"：主持人   |
-|Destination |拟呼入终端的地址或短号、手机号    |
-|Protocol |呼叫使用的协议: "sip", "h323", "rtmp", "mssip" (lync), "phone"(普通电话)；或者 "auto" (适用于内部终端或用户)    |
+|destination |拟呼入终端的地址或短号、手机号    |
+|protocol |呼叫使用的协议: "sip", "h323", "rtmp", "mssip" (lync), "phone"(普通电话)；或者 "auto" (适用于内部终端或用户)    |
 |presentation_url |可选）适用于RTMP呼叫。用于指定第二媒体流推送的地址    |
-|Streaming |适用于RTMP呼叫。是否将RTMP呼叫作为流媒体呼叫。缺省值为"no".RTMP呼叫请设置为"yes".    |
-|Dtmf_sequence |（可选）呼叫连接建立后立即向目标终端发送的DTMF序列    |
+|streaming |适用于RTMP呼叫。是否将RTMP呼叫作为流媒体呼叫。缺省值为"no".RTMP呼叫请设置为"yes".    |
+|dtmf_sequence |（可选）呼叫连接建立后立即向目标终端发送的DTMF序列    |
 |source_display_name |（可选）在被呼终端看到的会议室名字    |
-|Source |（可选）指定呼叫时使用的会议室地址或短号    |
+|source |（可选）指定呼叫时使用的会议室地址或短号    |
 |call_type |（可选）呼叫使用的音视频能力，缺省为video<br/> - "video": 主流+辅流，即双流<br/> - "video-only": 只有主流<br/> - "audio": audio-only<br/> |
 |keep_conference_alive |用于决定在所有其他非自动呼叫入会者（ADP）都已退出会议时，会议是否继续: <br/> - "keep_conference_alive": 会议继续直至该参会者退出。只适用于该参会者是主持人的场景<br/> - "keep_conference_alive_if_multiple": 有两个或以上的"keep_conference_alive_if_multiple"参会者且其中之一有一个主持人，会议继续<br/> - "keep_conference_alive_never": 非ADP入会者只剩下该参会者时会议立即结束<br/> - 缺省值: 对普通参会者缺省值为"keep_conference_alive";对流媒体参会者缺省者为"keep_conference_alive_never"|
 |remote_display_name |（可选）该参会者显示在会议清单中的名字    |
