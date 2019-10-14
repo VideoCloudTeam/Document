@@ -4,7 +4,7 @@
 
 ## 鉴权说明
 
-接口的头部均需要穿参数auth 鉴权的认知API ID 和 API KEY
+接口的头部均需要传递参数auth(鉴权KEY)；鉴权的KEY是有企业(租户)的API ID 和 API KEY构造。
 
 
 
