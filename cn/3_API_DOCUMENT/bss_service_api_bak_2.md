@@ -24,7 +24,7 @@
 该接口用于开启会议中的录制功能<br>
 请求地址:https://apiServer/meeting/openRecord<br>
 请求方式:POST<br>
-请求参数:
+请求参数:"Content-Type":"application/json"
 
 | **参数类别**     | **参数名称** | 类型    | **说明**            | 长度 | 是否必填 |
 | ---------------- | ------------ | ------- | ------------------- | ---- | -------- |
@@ -55,7 +55,7 @@
 该接口用于关闭会议中的录制功能。<br>
 请求地址:https://apiServer/meeting/closeRecord<br>
 请求方式:POST<br>
-请求参数:
+请求参数:"Content-Type":"application/json"
 
 | **参数类别**     | **参数名称** | 类型    | **说明**          | 长度 | 是否必填 |
 | ---------------- | ------------ | ------- | ----------------- | ---- | -------- |
@@ -86,7 +86,7 @@
 该接口用于通过录制的唯一ID获取录制文件<br>
 请求地址:https://apiServer/meeting/getRecords<br>
 请求方式:POST<br>
-请求参数:
+请求参数:"Content-Type":"application/json"
 
 | **参数类别**     | **参数名称** | 类型    | **说明**          | 长度 | 是否必填 |
 | ---------------- | ------------ | ------- | ----------------- | ---- | -------- |
@@ -142,7 +142,7 @@
 该接口用于通过录制的唯一ID删除该录制文件。<br>
 请求地址:https://apiServer/meeting/delRecordFile<br>
 请求方式:POST<br>
-请求参数:
+请求参数:"Content-Type":"application/json"
 
 | **参数类别**     | **参数名称** | 类型    | **说明**            | 长度 | 是否必填 |
 | ---------------- | ------------ | ------- | ------------------- | ---- | -------- |
@@ -164,10 +164,7 @@
         "recordId": "a1e3595d-207a-4853-ba39-c576a5761952",
     },
     "message": null,
-    "redirectUrl": null,
     "state": 1,
-    "token": null,
-    "redirect": false
 }
 ```
 
