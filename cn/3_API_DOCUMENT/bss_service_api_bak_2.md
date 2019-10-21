@@ -168,4 +168,73 @@
 }
 ```
 
-# 
+删除录播文件正确响应数据报格式:
+
+```json
+{
+    "code": "200",
+    "data": {
+        "recordId": "a1e3595d-207a-4853-ba39-c576a5761952",
+    },
+    "message": null,
+    "state": 1,
+}
+```
+
+## 开启直播
+
+该接口用于开启会议中的直播功能<br>请求地址:https://apiServer/meeting/openLive<br>
+请求方式:POST<br>
+请求参数:"Content-Type":"application/json"
+
+| **参数类别**     | **参数名称**  | 类型    | **说明**            | 长度 | 是否必填 |
+| ---------------- | ------------- | ------- | ------------------- | ---- | -------- |
+| 请求头部(header) | auth          | varchar | 该企业或租户认证key | 60   | 是       |
+| 请求参数(Body)   | conferenceKey | varchar | 会议是短号          | 50   | 是       |
+
+响应data参数:
+
+| **参数名称** | **类型** | **说明**     | **长度** |
+| ------------ | -------- | ------------ | -------- |
+| liveurl      | varchar  | 直播观看地址 |          |
+
+ 开启直播正确响应数据报格式:
+
+```json
+{
+    "code": "200",
+    "data": {
+        "liveurl": "https://vapi.myvmr.cn/live/xxxx",
+    },
+    "message": null,
+    "state": 1,
+}
+```
+
+
+
+## 关闭直播
+
+该接口用于关闭会议中的直播功能<br>请求地址:https://apiServer/meeting/stopLive<br>
+请求方式:POST<br>
+请求参数:"Content-Type":"application/json"
+
+| **参数类别**     | **参数名称**  | 类型    | **说明**            | 长度 | 是否必填 |
+| ---------------- | ------------- | ------- | ------------------- | ---- | -------- |
+| 请求头部(header) | auth          | varchar | 该企业或租户认证key | 60   | 是       |
+| 请求参数(Body)   | conferenceKey | varchar | 会议是短号          | 50   | 是       |
+
+响应data参数:
+
+无
+
+ 开启直播正确响应数据报格式:
+
+```json
+{
+    "code": "200",
+    "message": null,
+    "state": 1,
+}
+```
+
