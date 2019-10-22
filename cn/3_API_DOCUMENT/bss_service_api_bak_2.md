@@ -19,7 +19,7 @@
 | state        | int      | 1:成功 0：表示失败              |          |
 | message      | varchar  | 接口错误的消息返回 ，成功为null |          |
 
-## 开启录播
+## 开启录制
 
 该接口用于开启会议中的录制功能<br>
 请求地址:https://apiServer/meeting/openRecord<br>
@@ -50,7 +50,7 @@
 }
 ```
 
-## 关闭录播
+## 关闭录制
 
 该接口用于关闭会议中的录制功能。<br>
 请求地址:https://apiServer/meeting/closeRecord<br>
@@ -81,7 +81,7 @@
 }
 ```
 
-# 获取录播文件
+# 获取录制文件
 
 该接口用于通过录制的唯一ID获取录制文件<br>
 请求地址:https://apiServer/meeting/getRecords<br>
@@ -215,7 +215,7 @@
 
 ## 关闭直播
 
-该接口用于关闭会议中的直播功能<br>请求地址:https://apiServer/meeting/stopLive<br>
+该接口用于关闭会议中的直播功能<br>请求地址:https://apiServer/meeting/closeLive<br>
 请求方式:POST<br>
 请求参数:"Content-Type":"application/json"
 
