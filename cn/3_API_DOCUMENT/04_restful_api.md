@@ -913,8 +913,15 @@ https://mcuHost/api/services/<会议室地址或短号>/presentation.jpeg
 #### 消息体实例
 ```
 {
-    "view": "1:7",
-    "participants": ["a0196175-b462-48a1-b95c-f322c3af57c1", "65b4af2f-657a-4081-98a8-b17667628ce3"]
+    guest_view: "1:0",
+		host_view: "1:0",
+		missing: [],
+		"participants": ["a0196175-b462-48a1-b95c-f322c3af57c1", "65b4af2f-657a-4081-98a8-b17667628ce3"],
+		quality: "high",
+		rtx_ssrcs_map: {},
+		ssrcs: [],
+		time: 1573702690,
+		view: "1:0"
 }
 ```
 
@@ -923,6 +930,9 @@ https://mcuHost/api/services/<会议室地址或短号>/presentation.jpeg
 | -------------   | ------------   |
 |view     |当前视频布局：1:0-只显示主讲人；1:7-主讲人+至多7个以往的发言者；1:21-主讲人+至多21个以往的发言者 |
 |Participants     |屏幕上显示的以uuid标识的参会者/发言者顺序列表。第一个是当前主讲人，依次是上个主讲人…   |
+|guest_view |访客布局 |
+|host_view |主持人布局 |
+|quality |网络质量 high：“好”，low：“差” |
 
 
 <!-- message -->
