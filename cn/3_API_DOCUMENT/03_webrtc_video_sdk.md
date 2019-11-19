@@ -169,43 +169,184 @@
 返回值
 
 ```
-incoming:{
-	audio:{bitrate: "unavailable",
+// 高清模式
+{
+	41a78781-0947-4da7-89b9-44581f91772a: {
+		videoIn: {
+			bitrate: 925,
+			codec: "H264",
+			decode-delay: "1ms",
+			frameRate: "24",
+			packets-lost: "1",
+			packets-received: "18249",
+			percentage-lost: 0,
+			percentage-lost-recent: "0.0%",
+			resolution: "960x540"
+		}
+	},
+	c47b41a1-f245-4c20-aaba-a9139c32c17d: {
+		audioIn: {
+			bitrate: 69,
 			codec: "opus",
 			packets-lost: "0",
-			packets-received: "1270",
-			percentage-lost: 0}
-},
-outgoing:{
-	audio:{
-		bitrate: "unavailable",
-		codec: "opus",
-		echo-level: "0.106884",
-		packets-lost: "22",
-		packets-sent: "1271",
-		percentage-lost: 0
+			packets-received: "10469",
+			percentage-lost: 0,
+			percentage-lost-recent: "0.0%"
+		},
+		audioOut: {
+			bitrate: 69,
+			codec: "opus",
+			packets-lost: "0",
+			packets-received: "10469",
+			percentage-lost: 0,
+			percentage-lost-recent: "0.0%"
+		},
+		videoOut: {
+			bitrate: 69,
+			codec: "opus",
+			packets-lost: "0",
+			packets-received: "10469",
+			percentage-lost: 0,
+			percentage-lost-recent: "0.0%"
+		}
 	},
-	video_big:{
-		bitrate: "unavailable",
-		codec: "H264",
-		configured-bitrate: "124.3kbps",
-		frameRate: "20",
-		packets-lost: "45",
-		packets-sent: "522",
-		percentage-lost: 0,
-		resolution: "480x270"
+	selfAudio: {
+		audioin: {
+			bitrate: 69,
+			codec: "opus",
+			packets-lost: "0",
+			packets-received: "10469",
+			percentage-lost: 0,
+			percentage-lost-recent: "0.0%"
+		},
+		audioout: {
+			bitrate: 69,
+			codec: "opus",
+			packets-lost: "0",
+			packets-received: "10469",
+			percentage-lost: 0,
+			percentage-lost-recent: "0.0%"
+		}
 	},
-	video_smail:{
-		bitrate: "unavailable",
-		codec: "H264",
-		configured-bitrate: "124.3kbps",
-		frameRate: "15",
-		packets-lost: "19",
-		packets-sent: "412",
-		percentage-lost: 0,
-		resolution: "320x180"
+	selfVideo: {
+		video_big: {
+			bitrate: 1004,
+			codec: "H264",
+			configured-bitrate: "1144.0",
+			frameRate: "25",
+			packets-lost: "546",
+			packets-sent: "19810",
+			percentage-lost: 2.7,
+			percentage-lost-recent: "2.7%",
+			resolution: "960x540",
+		},
+		video_smail: {
+			bitrate: 91,
+			codec: "H264",
+			frameRate: "14",
+			packets-lost: "43",
+			packets-sent: "3508",
+			percentage-lost: 1.2,
+			percentage-lost-recent: "1.2%",
+			resolution: "320x180"
+		}
+	},
+	shareScreen: {
+		video: {}
 	}
 }
+
+// 流畅模式
+{
+	cb614da8-a412-4439-ac3c-b6b017fedb02: {
+		videoIn: {
+			bitrate: 925,
+			codec: "H264",
+			decode-delay: "1ms",
+			frameRate: "24",
+			packets-lost: "1",
+			packets-received: "18249",
+			percentage-lost: 0,
+			percentage-lost-recent: "0.0%",
+			resolution: "960x540"
+		}
+	},
+	c47b41a1-f245-4c20-aaba-a9139c32c17d: {
+		audioIn: {
+			bitrate: 69,
+			codec: "opus",
+			packets-lost: "31",
+			packets-received: "22647",
+			percentage-lost: 0.1,
+			percentage-lost-recent: "0.1%"
+		},
+		audioOut: {
+			bitrate: 8,
+			codec: "opus",
+			echo-level: "0.0383138",
+			packets-lost: "16",
+			packets-sent: "22729",
+			percentage-lost: 0.1,
+			percentage-lost-recent: "0.1%",
+		},
+		videoOut: {
+			bitrate: 906,
+			codec: "H264",
+			configured-bitrate: "1144.0",
+			frameRate: "25",
+			packets-lost: "1272",
+			packets-sent: "49313",
+			percentage-lost: 2.5,
+			percentage-lost-recent: "2.5%",
+			resolution: "960x540"	
+		}
+	},
+	selfAudio: {
+		audioin: {
+			bitrate: 69,
+			codec: "opus",
+			packets-lost: "0",
+			packets-received: "10469",
+			percentage-lost: 0,
+			percentage-lost-recent: "0.0%"
+		},
+		audioout: {
+			bitrate: 69,
+			codec: "opus",
+			packets-lost: "0",
+			packets-received: "10469",
+			percentage-lost: 0,
+			percentage-lost-recent: "0.0%"
+		}
+	},
+	selfVideo: {
+		video_big: {
+			bitrate: 1004,
+			codec: "H264",
+			configured-bitrate: "1144.0",
+			frameRate: "25",
+			packets-lost: "546",
+			packets-sent: "19810",
+			percentage-lost: 2.7,
+			percentage-lost-recent: "2.7%",
+			resolution: "960x540",
+		},
+		video_smail: {
+			bitrate: 91,
+			codec: "H264",
+			frameRate: "14",
+			packets-lost: "43",
+			packets-sent: "3508",
+			percentage-lost: 1.2,
+			percentage-lost-recent: "1.2%",
+			resolution: "320x180"
+		}
+	},
+	shareScreen: {
+		video: {}
+	}
+}
+
 ```
 
 ###外呼参会者命令：dialOut(destination,protocol, role, cb, params)
