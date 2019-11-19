@@ -179,7 +179,7 @@
 ## 获取直播录播状态
 
 该接口用于检测直播录制的真实状态<br>
-请求地址:https://apoServer/meeting/getLiveRecStatus<br>
+请求地址:https://apiServer/meeting/getLiveRecStatus<br>
 请求方式:POST<br>
 请求参数:"Content-Type":"application/json"
 
