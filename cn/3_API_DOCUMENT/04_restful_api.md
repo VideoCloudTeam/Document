@@ -1016,3 +1016,38 @@ https://mcuHost/api/services/<会议室地址或短号>/presentation.jpeg
 | **字段**     | **含义**  |
 | -------------   | ------------   |
 |reason     |参会者被剔出会议的原因 |
+
+## 公有云和专属云接口差异
+
+| 接口                                             | 接口                                    | 公有云 | 企业专属云 |
+| ------------------------------------------------ | --------------------------------------- | ------ | ---------- |
+| 获取token                                        | new_session                             | 支持   | 支持       |
+| refresh_session                                  | refresh_session                         | 支持   | 支持       |
+| 结束token                                        | end_session                             | 支持   | 支持       |
+| 获取会议状态                                     | Service_status                          | 支持   | 支持       |
+| 将某个终端或用户呼入本会议                       | dial                                    | 支持   | 支持       |
+| 锁会或解锁会议                                   | lock/unlock                             | 支持   | 支持       |
+| 开启会议                                         | start_service                           | 支持   | 不支持     |
+| 获取参会者列表                                   | participants                            | 支持   | 支持       |
+| 控制布局                                         | Override_layout                         | 支持   | 不支持     |
+| 将指定的与会者踢出会议                           | disconnect                              | 支持   | 支持       |
+| 将指定的与会者静音/取消其静音                    | mute/unmute                             | 支持   | 支持       |
+| 控制指定参会者能否接受辅流                       | allowrxpresentation /denyrxpresentation | 支持   | 支持       |
+| 将某个参会者变成“焦点”/”去焦”                    | spotlighton / spotlightoff              | 支持   | 不支持     |
+| 将指定参会者放进已锁定的会议中                   | unlock                                  | 支持   | 不支持     |
+| 改变指定参会者的角色                             | role                                    | 支持   | 不支持     |
+| 将指定参会者从当前会议转接到另一个会议室         | transfer                                | 支持   | 不支持     |
+| 给该WEBRTC/RTMP参会者新增音视频信道(子呼叫)      | calls                                   | 支持   | 支持       |
+| 修改字幕                                         | Override_text                           | 支持   | 支持       |
+| 有新的演示(辅流)，消息体中包含辅流的相关描述信息 | presentation_start                      | 支持   | 支持       |
+| 演示 (辅流)结束                                  | presentation_stop                       | 支持   | 支持       |
+| 有新的演示（辅流）帧                             | presentation_frame                      | 支持   | 不支持     |
+| 有新的参会者加入了会议                           | participant_create                      | 支持   | 不支持     |
+| 参会者属性有变                                   | participant_update                      | 支持   | 支持       |
+| 有参会者离开了会议                               | participant_delete                      | 支持   | 支持       |
+| 会议属性有更新                                   | service_update                          | 支持   | 支持       |
+| 视频布局有更新                                   | layout                                  | 支持   | 支持       |
+| 有新的（聊天）文字消息                           | Message                                 | 支持   | 支持       |
+| 讲话者有变，返回按“讲话”顺序排列的参会者列表     | Stage                                   | 支持   | 支持       |
+| 有参会者的子通讯被断开及其原因:比如结束屏幕共享  | call_disconnected                       | 支持   | 支持       |
+| 有参会者被云平台“踢出“了会议                     | Disconnect                              | 支持   | 支持       |
