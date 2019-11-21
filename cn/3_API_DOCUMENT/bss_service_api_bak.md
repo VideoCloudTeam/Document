@@ -179,7 +179,7 @@
 ## 获取直播录播状态
 
 该接口用于检测直播录制的真实状态<br>
-请求地址:https://apoServer/meeting/getLiveRecStatus<br>
+请求地址:https://apiServer/meeting/getLiveRecStatus<br>
 请求方式:POST<br>
 请求参数:"Content-Type":"application/json"
 
@@ -194,7 +194,7 @@
 | ------------- | -------- | ------------------------------------------------------------ |
 | conferenceKey | varchar  | 会议是短号                                                   |
 | live          | boolean  | 直播是否开启                                                 |
-| rtmpUrl       | varchar  | 直播流 live为true返回直播流，live为false返回'                |
+| rtmpUrl       | varchar  | 直播流 live为true返回直播流，live为false返回空字符串""                |
 | record        | boolean  | 录制是否开启                                                 |
 | recordId      | varchar  | 录制事件的recordId record为false返回''，需要拿openRecord返回的recordId比对，是否为自己开启的录制 |
 | failedReason  | varchar  | 录制开启失败的原因 录制开启失败将返回，否则不返回该字段      |
@@ -203,17 +203,17 @@
 
 ```json
 {
- 'code': 200,
- 'data': {
-  conferenceKey: '8000000',
-  live: false/true, # 直播是否开启
-  rtmpUrl: '', # 直播流 live为true返回直播流，live为false返回''
-  record: false/true, # 录制是否开启
-  recordId: 'a1e3595d-207a-4853-ba39-c576a5761952', # 录制事件的recordId record为false返回''，需要拿openRecord返回的recordId比对，是否为自己开启的录制
-  failedReason: '' # 录制开启失败的原因 录制开启失败将返回，否则不返回该字段
- },
- 'message': null
- 'state': 1
+    "code": 200,
+    "data": {
+        "conferenceKey": "8000000",
+        "live": false,
+        "rtmpUrl": "",
+        "record": false,
+        "recordId": "a1e3595d-207a-4853-ba39-c576a5761952",
+        "failedReason": ""
+    },
+    "message": null,
+    "state": 1
 }
 ```
 
