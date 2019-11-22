@@ -1038,7 +1038,7 @@ https://mcuHost/api/services/<会议室地址或短号>/presentation.jpeg
 | 改变指定参会者的角色                             | role                                    | 支持   | 不支持     |
 | 将指定参会者从当前会议转接到另一个会议室         | transfer                                | 支持   | 不支持     |
 | 给该WEBRTC/RTMP参会者新增音视频信道(子呼叫)      | calls                                   | 支持   | 支持       |
-| 修改字幕                                         | Override_text                           | 支持   | 支持       |
+| 修改字幕                                         | override_text                           | 支持   | 支持       |
 | 有新的演示(辅流)，消息体中包含辅流的相关描述信息 | presentation_start                      | 支持   | 支持       |
 | 演示 (辅流)结束                                  | presentation_stop                       | 支持   | 支持       |
 | 有新的演示（辅流）帧                             | presentation_frame                      | 支持   | 不支持     |
@@ -1047,7 +1047,7 @@ https://mcuHost/api/services/<会议室地址或短号>/presentation.jpeg
 | 有参会者离开了会议                               | participant_delete                      | 支持   | 支持       |
 | 会议属性有更新                                   | service_update                          | 支持   | 支持       |
 | 视频布局有更新                                   | layout                                  | 支持   | 支持       |
-| 有新的（聊天）文字消息                           | Message                                 | 支持   | 支持       |
-| 讲话者有变，返回按“讲话”顺序排列的参会者列表     | Stage                                   | 支持   | 支持       |
+| 有新的（聊天）文字消息                           | message                                 | 支持   | 支持       |
+| 讲话者有变，返回按“讲话”顺序排列的参会者列表     | stage                                   | 支持   | 支持       |
 | 有参会者的子通讯被断开及其原因:比如结束屏幕共享  | call_disconnected                       | 支持   | 支持       |
-| 有参会者被云平台“踢出“了会议                     | Disconnect                              | 支持   | 支持       |
+| 有参会者被云平台“踢出“了会议                     | disconnect                              | 支持   | 支持       |
