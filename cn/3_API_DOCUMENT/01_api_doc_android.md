@@ -315,6 +315,7 @@ public enum CallType {
         audio,                  //只建立音频连接
         recvOnly,               //只接收音视频
         recvOnlyVideo,          //只接收视频
+        recvAndSendAudio,       //接收音视频并发送音频
         recvAndSendVideo,       //接收音视频并发送视频
         recvAndSendAudioBitmap, //接收音视频并发送音频和图片h264视频
         recvAndSendBitmap,      //接收音视频并发送图片h264视频
