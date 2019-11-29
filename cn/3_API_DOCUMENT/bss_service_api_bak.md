@@ -100,7 +100,7 @@
 | ---------------- | ------------ | ------- | ------------------- | ---- | -------- |
 | 请求头部(header) | auth         | varchar | 该企业或租户认证key | 60   | 是       |
 | 请求参数(Body)   | recordId     | int     | 录制产生的唯一ID    | 15   | 是       |
-| 请求参数(Body)   | origin       | varchar  | https://apiServer   | 15   | 是       |
+| 请求参数(Body)   | origin       | varchar  | https://apiServer   | 128   | 否       |
 
 响应data参数:
 
