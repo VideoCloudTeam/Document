@@ -14,14 +14,27 @@
 
    **请求方式：** POST **请求参数：**
 
-   | 参数类别        | 参数名称  | 类型   | 注释       | 说明           |
-   | --------------- | --------- | ------ | ---------- | -------------- |
-   | 请求参数 (Body) | account   | String | 账号       | 登录的用户账号 |
-   | 请求参数 (Body) | pwd       | String | 密码       | 登录的用户密码 |
-   | 请求参数 (Body) | host      | String | 服务器地址 | 专属云需要传   |
-   | 请求参数 (Body) | plat_type | String | 端类型     | webrtcios      |
+   | 参数类别        | 参数名称  | 类型   | 注释         | 说明                      |
+   | --------------- | --------- | ------ | ------------ | ------------------------- |
+   | 请求参数 (Body) | account   | String | 账号         | 登录的用户账号            |
+   | 请求参数 (Body) | pwd       | String | 密码         | 登录的用户密码            |
+   | 请求参数 (Body) | host      | String | 服务器地址   | 专属云需要传              |
+   | 请求参数 (Body) | plat_type | String | 端类型       | webrtcios（专属云需要传） |
+   | 请求参数 (Body) | login_url | String | 登录的全地址 |                           |
 
-   **响应参数：**
+   ```objc
+   {
+   	"login_url": "https://{serverAddress}/api/v3/app/user/login/verify_user.shtml",
+   	"account": "xxxx@xxxx.xxx",
+   	"host": "服务器地址",
+   	"pwd": "密码",
+   	"plat_type": "webrtcios"
+   }
+   ```
+
+   
+
+   ** 响应参数：**
 
    results参数
 
