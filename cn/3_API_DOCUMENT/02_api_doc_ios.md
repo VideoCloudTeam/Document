@@ -13,8 +13,6 @@
 | <a href="#配置为专属云模型会议室">configPrivateCloudPlatform</a> | 是否是专属云模型会议室 |
 |      <a href="#配置呼入的音视频类型">configCallType</a>      |  配置呼入的音视频类型  |
 
-
-
 ### 配置主叫方的呼叫账号
 
 |                          方法                          |         功能         |
@@ -160,6 +158,12 @@
 |                         方法                          |         功能         |
 | :---------------------------------------------------: | :------------------: |
 | <a href="#配置音视频接收的方式">configMultistream</a> | 配置音视频接收的方式 |
+
+### 获取消费ID
+
+|                          方法                          |         功能         |
+| :----------------------------------------------------: | :------------------: |
+| <a href="#获取消费ID">getServiceUUID</a> | 获取消费ID |
 
 #### 方法
 
@@ -764,7 +768,7 @@ Participant 相关字段说明
 
 - ###### 接收到其他参会者开启白板
 
-`(void)VCRtc:(VCRtcModule *)module didStartWhiteBoard:(NSString *)shareUrl withUuid:(NSString *)uuid`
+`- (void)VCRtc:(VCRtcModule *)module didStartWhiteBoard:(NSString *)shareUrl withUuid:(NSString *)uuid`
 
 |   参数   |        参数说明        |
 | :------: | :--------------------: |
@@ -773,10 +777,14 @@ Participant 相关字段说明
 |   uuid   | 分享端的参会者唯一标识 |
 
 
-
 - ###### 接受到其他参会者关闭白板
 
 `- (void)VCRtc:(VCRtcModule *)module didStopWhiteBoard:(NSString *)shareUrl withUuid:(NSString *)uuid `
+
+- ###### 获取消费ID
+
+`- (NSString *)getServiceUUID`
+
 
 #####  属性列表
 
@@ -791,6 +799,7 @@ Participant 相关字段说明
 | layoutParticipants                     |        显示在视频上的布局参会者        |
 | forceOrientation                       |              屏幕旋转方向              |
 | role                                   |               参会者身份               |
+| serviceUUID                            |                 消费ID                |
 | isSupportLive                          |              支持直播功能              |
 | isSupportRecord                        |              支持录制功能              |
 | callName                               |               呼叫的名称               |
