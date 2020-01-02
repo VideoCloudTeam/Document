@@ -96,6 +96,7 @@
 | <a href="#putRawH264Data">putRawH264Data</a>                  | 添加H264数据                                                  |
 | <a href="#stopPresentation">stopPresentation</a>              | 停止发双流                                                     |
 | <a href="#getMediaStatistics">getMediaStatistics</a>          | 获取通讯媒体流参数                                             |
+| <a href="#getServiceUUID">getServiceUUID</a>         			| 获取会议消费id                                              |
 
 
 
@@ -458,6 +459,8 @@ vcrtc.setVCRTCListener(listener);
 <h6 name="getMediaStatistics">38. getMediaStatistics()</h6>
 ​	获取会议中实时的媒体通讯参数数据
 
+<h6 name="getServiceUUID">39. getServiceUUID()</h6>
+​	获取会议消费id
 
 <h5>VCRTCListener回调方法详细</h5>
 <h6 name="onConnected">1. onConnected()</h6>
