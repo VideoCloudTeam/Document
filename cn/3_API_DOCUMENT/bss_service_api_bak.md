@@ -218,6 +218,274 @@
 }
 ```
 
+## 预约会议
+
+### 获取当前账号可预约的会议室信息
+
+该接口用于获取可预约的会议室信息<br>
+请求地址:https://apiServer/subscribe/getmeeting<br>
+请求方式:GET<br>
+请求参数:requestParam
+
+| **参数类别**           | **参数名称** | 类型    | **说明**                  | 长度 | 是否必填 |
+| ---------------------- | ------------ | ------- | ------------------------- | ---- | -------- |
+| 请求头部(header)       | auth         | varchar | 该企业或租户认证key       | 60   | 是       |
+| 请求参数(requestParam) | account      | varchar | 用户账号（xxxx@xxxx格式） | 50   | 是       |
+
+响应data参数:
+
+| **参数名称** | **类型** | **说明**                                                |
+| ------------ | -------- | ------------------------------------------------------- |
+| hostPin      | varchar  | 主持人入会密码                                          |
+| isPublicVmr  | boolean  | 是否为新会议模式 缺省为 no                              |
+| hostView     | varchar  | 直播流 live为true返回直播流，live为false返回空字符串""  |
+| alias        | boolean  | 录制是否开启                                            |
+| guestView    | varchar  | 访客屏幕视角eg:1:7;4:0;1:0;1:21                         |
+| guestPin     | varchar  | 录制开启失败的原因 录制开启失败将返回，否则不返回该字段 |
+| pid          | Int      | 会议室ID                                                |
+| type         | Int      | 会议类型1:会议室 2:讲堂                                 |
+| maxSquare    | varchar  | 会议室最大方数                                          |
+| isDispark    | varchar  | 是否为公共会议室 缺省 no                                |
+| sipkey       | varchar  | 会议室短号                                              |
+| pDesc        | varchar  | 会议室名称                                              |
+
+正确响应数据报格式:
+
+```json
+{
+    "code": 200,
+    "data": [
+        {
+            "hostPin": "123456",
+            "isPublicVmr": "yes",
+            "livePwd": "",
+            "hostView": "1:7",
+            "alias": "17815027526meet@myvmr105.cn",
+            "guestView": "1:7",
+            "guestPin": "1234567",
+            "pid": 3364,
+            "type": 1,
+            "maxSquare": "100",
+            "pDesc": "何宗源的会议室",
+            "sipkey": 100713,
+            "isDispark": "no"
+        }
+    ],
+    "message": null,
+    "state": 1
+}
+```
+
+### 获取通讯录信息
+
+该接口用于获取可预约的会议室信息<br>
+请求地址:https://apiServer/subscribe/getcontacts<br>
+请求方式:GET<br>
+请求参数:requestParam
+
+eg:https://apiServer/subscribe/getcontacts?account=xxxx@xxx.cn&pageSize=10&pageIndex=1&isAll=yes
+
+| **参数类别**           | **参数名称** | 类型    | **说明**                                             | 长度 | 是否必填 |
+| ---------------------- | ------------ | ------- | ---------------------------------------------------- | ---- | -------- |
+| 请求头部(header)       | auth         | varchar | 该企业或租户认证key                                  | 60   | 是       |
+| 请求参数(requestParam) | account      | varchar | 用户账号（xxxx@xxxx格式）                            | 50   | 是       |
+| 分页                   | pageIndex    | int     |                                                      |      |          |
+| 分页的size             | pageSize     | int     |                                                      |      |          |
+| 是否获取全部           | isAll        | varchar | 缺省“no”；如果“yes” ，pageIndex，pageSize 字段无效； |      |          |
+
+正确响应数据报格式:
+
+```json
+{
+    "code": 200,
+    "data": [
+        {
+        "id": 1429, #预约主键ID
+        "theme": "会议主题", #预约主题
+        "introduction": "接口会议", #预约内容介绍
+        "randomHostPwd": "99999", #预约的主持人密码
+        "randomVisitorPwd": "", #预约的访客密码
+        "sipkey": "2516", #会议短号
+        "isAutoOpen": "no", #是否开启自动拉起
+        "startDate": "2020-01-30 09:00", #预约开始时间
+        "endDate": "2020-01-30 13:00", #预约结束时间
+        "createSubscriber": {
+            "id": 2756, #uid
+            "name": "蓝天" #姓名
+        },# 预约发起人 信息
+        "createTime": "2020-01-07 11:48:40", #创建预约的时间
+        "shortAddress": "https://api.myvmr.cn/meet/share/VTZI8", #预约分享地址
+        "bizProductId": 486, #会议室的主键ID
+        "visitorList": [
+            {
+                "id": "9182",
+                "name": "xxxx"
+            },
+            {
+                "id": "9187",
+                "name": "AAAAAA"
+            }
+        ] #参会者列表集合
+    },
+    "message": null,
+    "state": 1
+}
+```
+
+### 创建预约会议
+
+该接口用于创建预约信息<br>
+请求地址:https://apiServer/subscribe/createmeet<br>
+请求方式:POST<br>
+请求参数:"Content-Type":"application/json"
+
+| **参数类别**     | **参数名称** | 类型    | **说明**            | 长度 | 是否必填 |
+| ---------------- | ------------ | ------- | ------------------- | ---- | -------- |
+| 请求头部(header) | auth         | varchar | 该企业或租户认证key | 60   | 是       |
+
+请求参数(Body):
+
+```json
+{
+  "account":"admin@miwei.com" #账号地址
+  ,"theme":"会议主题" #预约主题
+  ,"introduction":"接口会议" #内容介绍
+  ,"visitor_ids":"9187,9182" #参会者的uid
+  ,"startDate":"2020-01-30 09:00" 
+  ,"endDate":"2020-01-30 13:00"
+  ,"isAutoOpen":"yes" #是否自动开启
+  ,"pid":486  #会议室 ID （空字符表示 系统随机按规则创建）
+  ,"shostPwd":"99999" # 主持人密码
+  ,"svisitorPwd":"888888" # 访客密码 （空字符表示访客密码空）
+}
+```
+
+## 
+
+正确响应数据报格式:
+
+```json
+{
+    "code": 200,
+    "data": [
+        {
+        "id": 1429, #预约主键ID
+        "theme": "会议主题", #预约主题
+        "introduction": "接口会议", #预约内容介绍
+        "randomHostPwd": "99999", #预约的主持人密码
+        "randomVisitorPwd": "", #预约的访客密码
+        "sipkey": "2516", #会议短号
+        "isAutoOpen": "no", #是否开启自动拉起
+        "startDate": "2020-01-30 09:00", #预约开始时间
+        "endDate": "2020-01-30 13:00", #预约结束时间
+        "createSubscriber": {
+            "id": 2756, #uid
+            "name": "蓝天" #姓名
+        },# 预约发起人 信息
+        "createTime": "2020-01-07 11:48:40", #创建预约的时间
+        "shortAddress": "https://api.myvmr.cn/meet/share/VTZI8", #预约分享地址
+        "bizProductId": 486, #会议室的主键ID
+        "visitorList": [
+            {
+                "id": "9182",
+                "name": "xxxx"
+            },
+            {
+                "id": "9187",
+                "name": "AAAAAA"
+            }
+        ] #参会者列表集合
+    },
+    "message": null,
+    "state": 1
+}
+```
+
+### 取消预约会议
+
+该接口用于取消预约记录<br>
+请求地址:https://apiServer/subscribe/cancelmeet<br>
+请求方式:POST<br>
+请求参数:"Content-Type":"application/json"
+
+| **参数类别**     | **参数名称** | 类型    | **说明**            | 长度 | 是否必填 |
+| ---------------- | ------------ | ------- | ------------------- | ---- | -------- |
+| 请求头部(header) | auth         | varchar | 该企业或租户认证key | 60   | 是       |
+
+请求参数(Body):
+
+```json
+{
+  "st_id":"xx" #与会会见主键ID
+}
+```
+
+## 
+
+正确响应数据报格式:
+
+```json
+{
+    "code": 200,
+    "data": null,
+    "message": "操作成功",
+    "state": 1
+}
+```
+
+### 查询预约列表
+
+该接口用于获取已经预约的预约会议信息<br>
+请求地址:https://apiServer/subscribe/getsubmeetings<br>
+请求方式:GET<br>
+请求参数:requestParam
+
+eg：https://apiServer/subscribe/getsubmeetings?account=xxxx@xxx.com
+
+| **参数类别**           | **参数名称** | 类型    | **说明**                  | 长度 | 是否必填 |
+| ---------------------- | ------------ | ------- | ------------------------- | ---- | -------- |
+| 请求头部(header)       | auth         | varchar | 该企业或租户认证key       | 60   | 是       |
+| 请求参数(requestParam) | account      | varchar | 用户账号（xxxx@xxxx格式） | 50   | 是       |
+
+正确响应数据报格式:
+
+```json
+{
+    "code": 200,
+    "data": [
+        {
+        "id": 1429, #预约主键ID
+        "theme": "会议主题", #预约主题
+        "introduction": "接口会议", #预约内容介绍
+        "randomHostPwd": "99999", #预约的主持人密码
+        "randomVisitorPwd": "", #预约的访客密码
+        "sipkey": "2516", #会议短号
+        "isAutoOpen": "no", #是否开启自动拉起
+        "startDate": "2020-01-30 09:00", #预约开始时间
+        "endDate": "2020-01-30 13:00", #预约结束时间
+        "createSubscriber": {
+            "id": 2756, #uid
+            "name": "蓝天" #姓名
+        },# 预约发起人 信息
+        "createTime": "2020-01-07 11:48:40", #创建预约的时间
+        "shortAddress": "https://api.myvmr.cn/meet/share/VTZI8", #预约分享地址
+        "bizProductId": 486, #会议室的主键ID
+        "visitorList": [
+            {
+                "id": "9182",
+                "name": "xxxx"
+            },
+            {
+                "id": "9187",
+                "name": "AAAAAA"
+            }
+        ] #参会者列表集合
+    },
+    "message": null,
+    "state": 1
+}
+```
+
 ## 常见响应状态码
 
 | 状态码 | 描述                           |
@@ -230,4 +498,5 @@
 | 200006 | 该会议还未开启                 |
 | 200007 | 该会议未开启录制               |
 | 200008 | 该会议不存在               |
+| 200009 | 当前时间段，此会议室已被预约 |
 
