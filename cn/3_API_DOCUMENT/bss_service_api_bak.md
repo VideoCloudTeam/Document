@@ -239,7 +239,7 @@
 | hostPin      | varchar  | 主持人入会密码                     |
 | isPublicVmr  | boolean  | 是否为新会议模式 缺省为 no         |
 | hostView     | varchar  | 主持人屏幕视角 eg:1:7;4:0;1:0;1:21 |
-| alias        | boolean  | 录制是否开启                       |
+| alias        | boolean  | 会议长地址                         |
 | guestView    | varchar  | 访客屏幕视角eg:1:7;4:0;1:0;1:21    |
 | guestPin     | varchar  | 访客入会密码                       |
 | pid          | Int      | 会议室ID                           |
