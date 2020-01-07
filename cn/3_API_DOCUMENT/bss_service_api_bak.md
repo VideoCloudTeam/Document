@@ -278,7 +278,7 @@
 
 ### 获取通讯录信息
 
-该接口用于获取可预约的会议室信息<br>
+该接口用于获取该企业用户信息<br>
 请求地址:https://apiServer/subscribe/getcontacts<br>
 请求方式:GET<br>
 请求参数:requestParam
