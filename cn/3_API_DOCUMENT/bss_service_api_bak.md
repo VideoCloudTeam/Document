@@ -234,20 +234,20 @@
 
 响应data参数:
 
-| **参数名称** | **类型** | **说明**                                                |
-| ------------ | -------- | ------------------------------------------------------- |
-| hostPin      | varchar  | 主持人入会密码                                          |
-| isPublicVmr  | boolean  | 是否为新会议模式 缺省为 no                              |
-| hostView     | varchar  | 直播流 live为true返回直播流，live为false返回空字符串""  |
-| alias        | boolean  | 录制是否开启                                            |
-| guestView    | varchar  | 访客屏幕视角eg:1:7;4:0;1:0;1:21                         |
-| guestPin     | varchar  | 录制开启失败的原因 录制开启失败将返回，否则不返回该字段 |
-| pid          | Int      | 会议室ID                                                |
-| type         | Int      | 会议类型1:会议室 2:讲堂                                 |
-| maxSquare    | varchar  | 会议室最大方数                                          |
-| isDispark    | varchar  | 是否为公共会议室 缺省 no                                |
-| sipkey       | varchar  | 会议室短号                                              |
-| pDesc        | varchar  | 会议室名称                                              |
+| **参数名称** | **类型** | **说明**                                               |
+| ------------ | -------- | ------------------------------------------------------ |
+| hostPin      | varchar  | 主持人入会密码                                         |
+| isPublicVmr  | boolean  | 是否为新会议模式 缺省为 no                             |
+| hostView     | varchar  | 直播流 live为true返回直播流，live为false返回空字符串"" |
+| alias        | boolean  | 录制是否开启                                           |
+| guestView    | varchar  | 访客屏幕视角eg:1:7;4:0;1:0;1:21                        |
+| guestPin     | varchar  | 访客入会密码                                           |
+| pid          | Int      | 会议室ID                                               |
+| type         | Int      | 会议类型1:会议室 2:讲堂                                |
+| maxSquare    | varchar  | 会议室最大方数                                         |
+| isDispark    | varchar  | 是否为公共会议室 缺省 no                               |
+| sipkey       | varchar  | 会议室短号                                             |
+| pDesc        | varchar  | 会议室名称                                             |
 
 正确响应数据报格式:
 
