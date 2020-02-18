@@ -187,7 +187,7 @@
 | **参数类别**     | **参数名称**  | 类型    | **说明**            | 长度 | 是否必填 |
 | ---------------- | ------------- | ------- | ------------------- | ---- | -------- |
 | 请求头部(header) | auth          | varchar | 该企业或租户认证key | 60   | 是       |
-| 请求参数(Body)   | conferenceKey | varchar | 会议是短号          | 50   | 是       |
+| 请求参数(Body)   | conferenceKey | varchar | 会议室短号          | 50   | 是       |
 
 响应data参数:
 
@@ -220,14 +220,8 @@
 ## 获取会议信息
 
 该接口用于查询会议是否在使用中和参会人数<br>
-请求地址:https://apiServer/api/getmeetinginfo<br>
-请求方式:POST<br>
-请求参数:"Content-Type":"application/json"
-
-| **参数类别**     | **参数名称**  | 类型    | **说明**            | 长度 | 是否必填 |
-| ---------------- | ------------- | ------- | ------------------- | ---- | -------- |
-| 请求头部(header) | auth  | varchar | 该企业或租户认证key | 60   | 是       |
-| 请求参数(Body)   | addr | varchar | 会议室短号          | 50   | 是       |
+请求地址:https://apiServer/api/getmeetinginfo?addr={会议室短号}<br>
+请求方式:GET<br>
 
 响应data参数:
 
@@ -237,7 +231,7 @@
 | alias         | varchar  | 会议室短号                                                 |
 | hostpwd       | varchar  | 主持密码                |
 | guestpwd      | varchar  | 入会密码                                                 |
-| locked        | boolean  | 会议是否锁定 |
+| locked        | boolean  | 会议是否锁定   |
 | started       | boolean  | 会议是否开启      |
 | participants  | int      | 与会人数     |
 
@@ -251,8 +245,8 @@
      "alias": "8000000",
      "hostpwd": "0000",
      "guestpwd": "0000",
-     "locked": False,
-     "started": True,
+     "locked": false,
+     "started": true,
      "participants": 0
 }
 ```
