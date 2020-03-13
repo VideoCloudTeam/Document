@@ -1,8 +1,6 @@
-# md 文件命名规则和路径详解
+# 帮助中心md 文件命名规则和路径详解
 
-#路径详解
-
-
+## 路径详解
 
 cn：中文
 en：英文
@@ -47,3 +45,4 @@ B： web
 ##### eg:1_history_version.md
 eg:0_screen_sharing_heard.md    tab切换的父页
 eg:0_screen_sharing_tab_web.md  tab切换
+
