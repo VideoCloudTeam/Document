@@ -6,7 +6,7 @@
 
 ## 2.桌面一体终端登录注册
 
-![img](file:///C:\Users\17746\AppData\Local\Temp\ksohtml8308\wps1.jpg) 
+![img](../../_image/MT666.use/wps1.jpg) 
 
  
 
@@ -14,7 +14,7 @@
 
 (2)若您是新客户，尚未拥有企业账号，可直接点击页面中的“去注册”，输入手机号等信息即可完成企业注册。如下图。(也可访问[www.zijingcloud.com](http://www.zijingcloud.com)官网进行注册并创建账号)
 
-![img](file:///C:\Users\17746\AppData\Local\Temp\ksohtml8308\wps2.jpg) 
+![img](../../_image/MT666.use/wps2.jpg) 
 
  
 
@@ -22,7 +22,7 @@
 
 主界面介绍
 
-![img](file:///C:\Users\17746\AppData\Local\Temp\ksohtml8308\wps3.jpg) 
+![img](../../_image/MT666.use/wps3.jpg) 
 
  
 
@@ -44,19 +44,19 @@
 
  
 
-![img](file:///C:\Users\17746\AppData\Local\Temp\ksohtml8308\wps4.jpg) 
+![img](../../_image/MT666.use/wps4.jpg) 
 
 #### 2.通讯录组会
 
 从通讯录中选择联系人后点击呼叫进行开会。
 
-![img](file:///C:\Users\17746\AppData\Local\Temp\ksohtml8308\wps5.jpg) 
+![img](../../_image/MT666.use/wps5.jpg) 
 
 ### 3.2会议中
 
 #### 1.会中功能
 
-![img](file:///C:\Users\17746\AppData\Local\Temp\ksohtml8308\wps6.jpg) 
+![img](../../_image/MT666.use/wps6.jpg) 
 
 （1）静音：关闭/打开麦克风
 
@@ -76,7 +76,7 @@
 
 ####  2.会中控制
 
-![img](file:///C:\Users\17746\AppData\Local\Temp\ksohtml8308\wps7.jpg) 
+![img](../../_image/MT666.use/wps7.jpg) 
 
  
 
@@ -96,7 +96,7 @@
 
 ### 4.1通用
 
-![img](file:///C:\Users\17746\AppData\Local\Temp\ksohtml8308\wps8.jpg) 
+![img](../../_image/MT666.use/wps8.jpg) 
 
  
 
@@ -114,7 +114,7 @@
 
 ### 4.2网络
 
-![img](file:///C:\Users\17746\AppData\Local\Temp\ksohtml8308\wps9.jpg) 
+![img](../../_image/MT666.use/wps9.jpg) 
 
  
 
@@ -124,7 +124,7 @@
 
 ### 4.3显示
 
-![img](file:///C:\Users\17746\AppData\Local\Temp\ksohtml8308\wps10.jpg) 
+![img](../../_image/MT666.use/wps10.jpg) 
 
  
 
@@ -134,7 +134,7 @@
 
 ### 4.4媒体
 
-![img](file:///C:\Users\17746\AppData\Local\Temp\ksohtml8308\wps11.jpg) 
+![img](../../_image/MT666.use/wps11.jpg) 
 
  
 
@@ -142,7 +142,7 @@
 
 ### 4.5关于
 
-![img](file:///C:\Users\17746\AppData\Local\Temp\ksohtml8308\wps12.jpg) 
+![img](../../_image/MT666.use/wps12.jpg) 
 
  
 
