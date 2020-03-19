@@ -1,4 +1,8 @@
-### 以图片方式分享
+### 共享图片
+
+功能描述：在视频通话中将自己的图片文件分享给其他的参会人，以此提高沟通效率。
+
+#### 以图片方式共享
 
 - 分享图片
 
@@ -35,9 +39,9 @@
 
 ```
 
-### 以视频流方式分享
+#### 以流方式共享
 
-- 分享图片
+- 共享图片
 
 ```objc
 //把UIImage转成NSData
@@ -48,7 +52,7 @@
 }];
 ```
 
-- 分享多张图片时,更改当前显示的图片
+- 共享多张图片时,更改当前显示的图片
 
 ```objc
 //把UIImage转成NSData
@@ -58,7 +62,7 @@
 }];
 ```
 
-- 结束自己在会中分享
+- 结束自己在会中共享
 
 ```objective-c
 //把UIImage转成NSData
@@ -68,7 +72,7 @@
 }];
 ```
 
-3. 会中有参会者发起分享
+3. 会中有参会者发起共享
 
 ```objc
 //shareUuid 发起分享的人的唯一标识符
@@ -76,7 +80,7 @@
 -(void)VCRtc:(VCRtcModule *)module didStartImage:(NSString *)shareUuid{}
 ```
 
-4. 接收远端其他人的图片分享
+4. 接收远端其他人的图片共享
 
 ```objc
 //imageStr 图片链接  uuid:发起分享的人的唯一标识符
@@ -84,17 +88,20 @@
 - (void)VCRtc:(VCRtcModule *)module didUpdateImage:(NSString *)imageStr uuid:(NSString *)uuid {}
 ```
 
-5. 接收远端其他人的视频分享
+5. 接收远端其他人的视频共享
 
 ```objc
 //imageStr视频链接 uuid:发起分享的人的唯一标识符
 - (void)VCRtc:(VCRtcModule *)module didUpdateVideo:(NSString *)imageStr uuid:(NSString *)uuid{}
 ```
 
-6. 远端和本端分享停止
+6. 停止共享
 
 ```objc
 //imageStr: 分享内容 
 - (void)VCRtc:(VCRtcModule *)module didStopImage:(NSString *)imageStr{}
 ```
 
+### 共享PDF
+
+共享PDF功能和共享图片功能类似，主要都是图片的共享，需要将PDF转化成图片资源文件再发起共享。

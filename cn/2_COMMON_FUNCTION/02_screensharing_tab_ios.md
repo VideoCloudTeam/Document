@@ -1,5 +1,3 @@
-使用屏幕录制分享，随时随地分享您的屏幕到会议中
-
 ### 前提条件
 
 - `iOS 11.0+`
@@ -10,11 +8,11 @@
 
 选中Xcode -> File -> New -> Target -> Broadcast Upload Extension (**注意: 新建时不要勾选Include UI Extension`**)
 
-![](../_images/ios/6.png)
+<img src="../_images/ios/6.png" style="zoom:30%;" />
 
-![7](../_images/ios/7.png)
+<img src="../_images/ios/7.png" alt="7" style="zoom:35%;" />
 
-![](../_images/ios/8.png)
+<img src="../_images/ios/8.png" style="zoom:26%;" />
 
 **新建后会创建 `SampleHandler.h` 和 `SampleHandler.m`两个文件**
 
@@ -22,11 +20,11 @@
 
 2. 在 apple developer 中创建 相应的group id，并在Xcode中App 和 Extension打开App Groups
 
-![](../_images/ios/9.png)
+<img src="../_images/ios/9.png" style="zoom:20%;" />
 
 3. 把`VCRTCScreenShare.framework`拖入项目中
 
-![](../_images/ios/10.png)
+<img src="../_images/ios/10.png" style="zoom:40%;" />
 
 ![](../_images/ios/11.png)
 
@@ -34,13 +32,13 @@
 
 **在Link Binary with Libraries 中添加 `ReplayKit.framework`**
 
-![](../_images/ios/13.png)
+<img src="../_images/ios/13.png" style="zoom:30%;" />
 
-![](../_images/ios/12.png)
+<img src="../_images/ios/12.png" style="zoom:30%;" />
 
 
 
-![16](../_images/ios/16.png)
+<img src="../_images/ios/16.png" alt="16" style="zoom:30%;" />
 
 **添加App Groups**
 
@@ -48,7 +46,7 @@
 
 ![17](../_images/ios/17.png)
 
-![18](../_images/ios/18.png)
+<img src="../_images/ios/18.png" alt="18" style="zoom:33%;" />
 
 ```红色
 注意: 
