@@ -5,7 +5,7 @@
 1. 通过以下方式下载紫荆云 App：
 
 - 从苹果或安卓的应用商店，搜索“紫荆云ZijingCloud”，免费下载紫荆云 App。 
-- 访问紫荆云官网下载中心（http://www.zijingcloud.com/download.html）， 用手机扫描下载二维码，自动跳转至下载页面。 
+- 访问紫荆云官网下载中心（  http://www.zijingcloud.com/download.html  ）， 用手机扫描下载二维码，自动跳转至下载页面。 
 
 2. 下载安装成功后，点击紫荆云图标，打开登录界面，如图所示。
 

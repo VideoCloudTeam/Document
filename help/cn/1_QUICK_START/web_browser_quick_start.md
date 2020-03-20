@@ -1,10 +1,10 @@
-# web浏览器库快速体验手册
+# web浏览器快速体验手册
 
 ## 1.web浏览器入会
 
 在入会之前，我们已经通过管理员分配、APP注册或者官网自注册拿到了会议室资源：包括会议室号码和会议室密码。
 
-1.安装好插件后在Chrome浏览器地址栏中输入：http://www.zijingcloud.com/访问到紫金云官网的首页，点击加入会议入会，或者直接在地址栏中输入：https://cs.zijingcloud.com/web_join/在加入会议页面进行入会，如图所示
+1.安装好插件后在Chrome浏览器地址栏中输入：http://www.zijingcloud.com/  访问到紫金云官网的首页，点击加入会议入会，或者直接在地址栏中输入：https://cs.zijingcloud.com/web_join/  在加入会议页面进行入会，如图所示
 
 ![image-20200215102229782](../_image/App/image-20200215102229782.png)
 
