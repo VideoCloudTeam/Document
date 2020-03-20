@@ -22,7 +22,7 @@
 
 （3）填写信息后点击注册按钮注册成功后会自动登录
 
-<img src="../_image/App/\image-20200210152957815.png" alt="image-20200210152957815" style="zoom:33%;" />
+<img src="../_image/App/image-20200210152957815.png" alt="image-20200210152957815" style="zoom:33%;" />
 
 
 
@@ -38,11 +38,11 @@
 
 （1）注册成功后自动登录可根据引导直接发起会议
 
-<img src="../_image/App/\image-20200210153517225.png" alt="image-20200210153517225" style="zoom:33%;" />
+<img src="../_image/App/image-20200210153517225.png" alt="image-20200210153517225" style="zoom:33%;" />
 
 （2）使用我的云会议室点击开始会议按钮入会
 
-<img src="../_image/App/\image-20200210160048415.png" alt="image-20200210160048415" style="zoom:33%;" />
+<img src="../_image/App/image-20200210160048415.png" alt="image-20200210160048415" style="zoom:33%;" />
 
 方法二：直接在APP首页点加入会议按钮输入会议室号入会；或者点击历史会议记录入会
 

@@ -4,7 +4,7 @@
 
 （1）方式一：在微信→发现→小程序，在小程序中搜索紫荆云ZIjingCloud小程序打开；打开小程序后，输入会议号和姓名入会
 
-<img src="../_image/App\image-20200215130046031.png" alt="image-20200215130046031" style="zoom:33%;" />
+<img src="../_image/App/image-20200215130046031.png" alt="image-20200215130046031" style="zoom:33%;" />
 
 （2）方式二：直接通过历史记录入会（初次使用小程序没有历史会议记录）
 
@@ -12,17 +12,17 @@
 
 ​      首先在微信中打开小程序卡片如图：
 
-<img src="../_image/App\image-20200210204649171.png" alt="image-20200210204649171" style="zoom:33%;" />
+<img src="../_image/App/image-20200210204649171.png" alt="image-20200210204649171" style="zoom:33%;" />
 
 其次点击微信入会
 
-<img src="../_image/App\image-20200210204446733.png" alt="image-20200210204446733" style="zoom:33%;" />
+<img src="../_image/App/image-20200210204446733.png" alt="image-20200210204446733" style="zoom:33%;" />
 
 ## 2.会中
 
 入会后小程序会中画面如下：标题栏、视频区、操作栏
 
-![image-20200215132232831](../_image/App\image-20200215132232831.png)
+![image-20200215132232831](../_image/App/image-20200215132232831.png)
 
 标题栏：入会后的会议时长、会议室号
 
