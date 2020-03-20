@@ -8,7 +8,7 @@
 
 选中Xcode -> File -> New -> Target -> Broadcast Upload Extension (**注意: 新建时不要勾选Include UI Extension`**)
 
-<img src="../_images/ios/6.png" style="zoom:30%;" />
+<img src="../_images/ios/6.png" style="zoom:20%;" />
 
 <img src="../_images/ios/7.png" alt="7" style="zoom:35%;" />
 
