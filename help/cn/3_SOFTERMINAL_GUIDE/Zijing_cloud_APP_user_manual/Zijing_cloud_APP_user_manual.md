@@ -10,7 +10,7 @@
 
 2. 下载安装成功后，点击紫荆云图标，打开登录界面，如图所示。
 
-   <img src="../../_image/App/image-20200210183234123.png" alt="image-20200210183234123" style="zoom:33%;div align=center" />
+   <img src="../../_image/App/image-20200210183234123.png" alt="image-20200210183234123" style="zoom:33%; align=center" />
 
    （1）加入会议：点击加入会议按钮，用户可以无需注册登录，直接输入会议号和入会名称，加入指定视频会议。
 
