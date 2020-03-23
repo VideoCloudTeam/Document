@@ -73,27 +73,28 @@
 | <a href="#setTime">setTime</a>                               | 被呼时设置接收到的消息中的呼叫时间。                              |
 | <a href="#setBsskey">setBsskey</a>                           | 点对点被呼时设置接收到的消息中的bsskey                           |
 | <a href="#setOneTimeToken">setOneTimeToken</a>               | 被呼时设置接收到的消息中的token                                 |
+| <a href="#setCustomVideoCapturer">setCustomVideoCapturer</a> | 设置自定义视频源采集                                           |
 | <a href="#connect">connect</a>                               | 建立连接                                                     |
 | <a href="#disconnect">disconnect</a>                         | 断开链接                                                     |
 | <a href="#getParticipants">getParticipants</a>               | 获取参会人列表                                                |
 | <a href="#isVMR">isVMR</a>                                   | 是否是讲堂                                                    |
-| <a href="#canRecord">canRecord</a>                           | 是否允许录制                                                  |
+| <a href="#canRecord">canRecord</a>                           | 是否允许录制                                                  |
 | <a href="#canLive">canLive</a>                               | 是否允许直播                                                  |
 | <a href="#reconnectNewSessionCall">reconnectNewSessionCall</a>| 重新入会                                                     |
 | <a href="#reconnectOnlyMediaCall">reconnectOnlyMediaCall</a> | 重新建立媒体连接（多用于断网重连）                                |
 | <a href="#updateClayout">updateClayout</a>                   | 更新clayout                                                  |
 | <a href="#getCameraDevices">getCameraDevices</a>             | 获取摄像头设备列表                                             |
-| <a href="#switchCamera">switchCamera</a>                     | 切换摄像头                                                    |
+| <a href="#switchCamera">switchCamera</a>                     | 切换摄像头                                                    |
 | <a href="#updateVideoImage">updateVideoImage</a>             | 更新关闭摄像头时发送的图片                                       |
 | <a href="#setVideoEnable">setVideoEnable</a>                 | 关闭/打开摄像头                                                |
 | <a href="#setAudioEnable">setAudioEnable</a>                 | 关闭/打开麦克风                                                |
 | <a href="#setAudioModelEnable">setAudioModelEnable</a>        | 关闭/打开语音模式                                             |
-| <a href="#sendPresentationImage">sendPresentationImage</a>    | 发送双流图片（上传文件方式）                                     |
+| <a href="#sendPresentationImage">sendPresentationImage</a>    | 发送双流图片（上传文件方式）                                     |
 | <a href="#sendPresentationBitmap">sendPresentationBitmap</a>  | 发送双流图片（视频流方式）                                        |
 | <a href="#sendPresentationScreen">sendPresentationScreen</a>  | 屏幕共享                                                      |
 | <a href="#sendPresentationVideo">sendPresentationVideo</a>    | 发送视频文件（仅支持Y4M(YUV4MPEG2)格式视频文件）                   |
 | <a href="#sendPresentationRawH264">sendPresentationRawH264</a>| 发送H264视频流                                                 |
-| <a href="#putRawH264Data">putRawH264Data</a>                  | 添加H264数据                                                  |
+| <a href="#putRawH264Data">putRawH264Data</a>                  | 添加H264数据                                                  |
 | <a href="#stopPresentation">stopPresentation</a>              | 停止发双流                                                     |
 | <a href="#getMediaStatistics">getMediaStatistics</a>          | 获取通讯媒体流参数                                             |
 | <a href="#getServiceUUID">getServiceUUID</a>         			| 获取会议消费id                                              |
@@ -324,7 +325,8 @@ public enum CallType {
         picture,                //双流时发送图片（上传图片文件）
         bitmap,                 //双流时发送图片（转h264视频流）
         screen,                 //双流时共享
-        rawH264                 //双流时发送H264视频流
+        rawH264,                //双流时发送H264视频流
+        custom                  //自定义视频源呼叫
     }
 ```
 
@@ -361,9 +363,96 @@ public enum CallType {
 ​	被呼时设置接收到的消息中的bsskey，用于入会验证，由于被呼叫不知道会议室密码等入会信息，所以，服务器推送过来的msgJson中存在bsskey、oneTimeToken用于入会验证。
 
 <h6 name="setOneTimeToken">12. setOneTimeToken(String oneTimeToken)</h6>
-​	被呼时设置接收到的消息中的token。同上
+​    被呼时设置接收到的消息中的token。同上
 
-<h6 name="connect">13. connect(String chanel, String password, String nickname, CallBack callBack)</h6>
+<h6 name="setCustomVideoCapturer">13. setCustomVideoCapturer(VCVideoCapturer capturer)</h6>
+​    设置自定义视频源采集
+
+```java
+//创建自己的VideoCapturer继承VCVideoCapturer
+public class MyVideoCapturer extends VCVideoCapturer {
+
+    private VCVideoFrameConsumer consumer;
+
+    @Override
+    public void onInitialize(VCVideoFrameConsumer vcVideoFrameConsumer) {
+    	//初始化，可以在这里做一些初始化操作，例如初始化摄像头并设置好参数。
+    	//得到consumer，用来发送视频数据
+        consumer = vcVideoFrameConsumer;
+    }
+
+    @Override
+    public void onStart() {
+    	//开始采集视频，例如可以在这里打开摄像头
+    }
+
+    @Override
+    public void onStop() {
+    	//停止采集视频数据，例如可以在这里关闭摄像头
+    }
+
+    @Override
+    public void onDispose() {
+    	//资源释放，例如可以在这里释放摄像头
+    }
+
+    private void sendData() {
+    	//发送视频数据，详见VCVideoFrameConsumer
+    	//consumer.consumeByteArrayFrame(data, VCVideoFrameConsumer.Format.I420, width, height, rotation, timestamp);
+    }
+}
+
+```
+使用自定的VideoCapturer入会
+
+```java
+//创建一个自定义capturer
+MyVideoCapturer capturer = new MyVideoCapturer();
+//设置呼叫类型为自定义类型
+vcrtc.setCallType(VCRTC.CallType.custom);
+//设置自定义capturer
+vcrtc.setCustomVideoCapturer(capturer);
+
+...
+
+//发送视频数据
+capturer.sendData();
+
+```
+
+VCVideoFrameConsumer说明
+注：目前只实现了I420格式的视频数据发送，其他的之后再加
+
+```java
+public interface VCVideoFrameConsumer {
+
+	//数据格式
+    enum Format {
+        TEXTURE_2D,
+        TEXTURE_OES,
+        I420,
+        NV21,
+        RGBA
+    }
+
+    /**
+     * 发送数据方法
+     * format:数据格式
+     * width:宽
+     * height:高
+     * rotation:视频帧顺时针旋转的角度。如果设置了旋转角度，媒体引擎会对图像进行旋转。你可以根据需要将角度值设为 0 度、90 度、180 度和 270 度，如果设置为其他数字，系统会自动忽略
+     * timestamp:传入的视频帧的时间戳。开发者必须为每一个视频帧设置一个时间戳
+     */
+    void consumeByteBufferFrame (ByteBuffer buffer, Format format, int width, int height, int rotation, long timestamp);
+
+    void consumeByteArrayFrame (byte[] data, Format format, int width, int height, int rotation, long timestamp);
+
+    void consumeTextureFrame (int textureId, Format format, int width, int height, int rotation, long timestamp, float[] matrix);
+}
+
+```
+
+<h6 name="connect">14. connect(String chanel, String password, String nickname, CallBack callBack)</h6>
 ​	建立连接,示例代码如下：
 
 ```java
@@ -384,82 +473,82 @@ vcrtc.setVCRTCListener(listener);
     });
 ```
 
-<h6 name="disconnect">14. disconnect()</h6>
+<h6 name="disconnect">15. disconnect()</h6>
 ​	断开链接
 
-<h6 name="getParticipants">15. getParticipants()</h6>
+<h6 name="getParticipants">16. getParticipants()</h6>
 ​	获取当前会议中的参会人列表
 
-<h6 name="isVMR">16. isVMR()</h6>
+<h6 name="isVMR">17. isVMR()</h6>
 ​	当前会议是否是讲堂
 
-<h6 name="canRecord">17. canRecord()</h6>
+<h6 name="canRecord">18. canRecord()</h6>
 ​	当前会议室是否允许录制
 
-<h6 name="canLive">18. canLive()</h6>
+<h6 name="canLive">19. canLive()</h6>
 ​	当前会议室是否允许直播
 
-<h6 name="reconnectNewSessionCall">19. reconnectNewSessionCall()</h6>
+<h6 name="reconnectNewSessionCall">20. reconnectNewSessionCall()</h6>
 ​	重新入会
 
-<h6 name="reconnectOnlyMediaCall">20. reconnectOnlyMediaCall()</h6>
+<h6 name="reconnectOnlyMediaCall">21. reconnectOnlyMediaCall()</h6>
 ​	重新建立媒体呼叫（多用于断网重连）
 
-<h6 name="updateClayout">21. updateClayout(String clayout)</h6>
+<h6 name="updateClayout">22. updateClayout(String clayout)</h6>
 ​	已经加入会议后，在会中动态改变clayout，clayout的作用详见setClayout方法说明
 
-<h6 name="getCameraDevices">22. getCameraDevices()</h6>
+<h6 name="getCameraDevices">23. getCameraDevices()</h6>
 ​	获取摄像头设备列表
 
-<h6 name="switchCamera">23. switchCamera()</h6>
+<h6 name="switchCamera">24. switchCamera()</h6>
 ​	切换摄像头
 
-<h6>24. switchCamera(String deviceName)</h6>
+<h6>25. switchCamera(String deviceName)</h6>
 ​	切换到指定摄像头设备
 
-<h6 name="updateVideoImage">25. updateVideoImage(Bitmap bitmap)</h6>
+<h6 name="updateVideoImage">26. updateVideoImage(Bitmap bitmap)</h6>
 ​	更新关闭摄像头时发送的图片
 
-<h6 name="setVideoEnable">26. setVideoEnable(boolean enable)</h6>
+<h6 name="setVideoEnable">27. setVideoEnable(boolean enable)</h6>
 ​	关闭/打开摄像头
 
-<h6>27. setVideoEnable(boolean enable, boolean sendImage)</h6>
+<h6>28. setVideoEnable(boolean enable, boolean sendImage)</h6>
 ​	关闭/打开摄像头，第二个参数表示关闭摄像头时是否发送图片视频流
 
-<h6 name="setAudioEnable">28. setAudioEnable(boolean enable)</h6>
+<h6 name="setAudioEnable">29. setAudioEnable(boolean enable)</h6>
 ​	关闭/打开麦克风
 
-<h6 name="setAudioModelEnable">29. setAudioModelEnable(boolean enable)</h6>
+<h6 name="setAudioModelEnable">30. setAudioModelEnable(boolean enable)</h6>
 ​	关闭/打开语音模式
 
-<h6 name="sendPresentationImage">30. sendPresentationImage(File file)</h6>
+<h6 name="sendPresentationImage">31. sendPresentationImage(File file)</h6>
 ​	发送双流图片，上传文件方式
 
-<h6>31. sendPresentationImage(Bitmap bitmap)</h6>
+<h6>32. sendPresentationImage(Bitmap bitmap)</h6>
 ​	发送双流图片，上传bitmap方式
 
-<h6 name="sendPresentationBitmap">32. sendPresentationBitmap(Bitmap bitmap)</h6>
+<h6 name="sendPresentationBitmap">33. sendPresentationBitmap(Bitmap bitmap)</h6>
 ​	发送双流图片，图片转视频流方式
 
-<h6 name="sendPresentationScreen">33. sendPresentationScreen()</h6>
+<h6 name="sendPresentationScreen">34. sendPresentationScreen()</h6>
 ​	屏幕共享
 
-<h6 name="sendPresentationVideo">34. sendPresentationVideo(String videoFilePath)</h6>
+<h6 name="sendPresentationVideo">35. sendPresentationVideo(String videoFilePath)</h6>
 ​	发送视频文件（仅支持Y4M(YUV4MPEG2)格式视频文件）
 
-<h6 name="sendPresentationRawH264">35. sendPresentationRawH264()</h6>
+<h6 name="sendPresentationRawH264">36. sendPresentationRawH264()</h6>
 ​	开始发送H264视频流
 
-<h6 name="putRawH264Data">36. putRawH264Data(byte[] data)</h6>
+<h6 name="putRawH264Data">37. putRawH264Data(byte[] data)</h6>
 ​	添加H264数据
 
-<h6 name="stopPresentation">37. stopPresentation()</h6>
+<h6 name="stopPresentation">38. stopPresentation()</h6>
 ​	停止发双流，包括停止图片共享、屏幕共享等发送双流状态。
 
-<h6 name="getMediaStatistics">38. getMediaStatistics()</h6>
+<h6 name="getMediaStatistics">39. getMediaStatistics()</h6>
 ​	获取会议中实时的媒体通讯参数数据
 
-<h6 name="getServiceUUID">39. getServiceUUID()</h6>
+<h6 name="getServiceUUID">40. getServiceUUID()</h6>
 ​	获取会议消费id
 
 <h5>VCRTCListener回调方法详细</h5>
