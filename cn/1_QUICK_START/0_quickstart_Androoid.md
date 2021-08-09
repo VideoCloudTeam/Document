@@ -160,12 +160,7 @@ preferences.setServerAddress("服务器地址", new CallBack() {
 private void makeCall(){
     vcrtc = new VCRTC(this);
   	vcrtc.setCheckdup(VCUtil.MD5(SystemUtil.getMac(context) + "显示的昵称"));
-  	// 如果是登录，需要传入账号
-  	if (null != call.getAccount()) {
-       vcrtc.setAccount(call.getAccount());
-    }
   	// 如果是被呼msgjson中会有对应信息，主动入会不需要
-  	
     if (call.getMsgJson() != null && !"".equals(call.getMsgJson())) {
             try {
                 JSONObject root = new JSONObject(call.getMsgJson());
