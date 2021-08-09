@@ -117,8 +117,6 @@ preferences.setServerAddress("服务器地址", new CallBack() {
                 
             }
         });
-//设置为转发模式（收到多个流） 公有云情况下可以设置为false，只接受一个平台的合成流
-preferences.setSimulcast(true);
 ```
 
 
@@ -133,33 +131,15 @@ preferences.setSimulcast(true);
      * @param apiServer
      */
     private void loadInfoAndCall(String num, String apiServer) {
-        if (TextUtils.isEmpty(apiServer)) {
-            return;
-        }
-        String url = String.format("https://" + apiServer + "/api/" + "getmeetinginfo?addr=%s", num);
-
-        OkHttpUtil.doGet(url, new Callback() {
+        CheckUtils.checkConference(num, apiServer, new CheckUtils.CheckConferenceListener() {
             @Override
-            public void onFailure(okhttp3.Call call, IOException e) {
-              // 子线程，需要通过handler进行线程切换
-                Message msg = new Message();
-                msg.what = REQUEST_FAILED;
-                mainHandler.sendMessage(msg);
+            public void onSuccess(String s) {
+                // 验证成功
             }
 
             @Override
-            public void onResponse(okhttp3.Call call, Response response) throws IOException {
-              // 子线程，需要通过handler进行线程切换
-                String rep = response.body().string();
-                Message msg = new Message();
-                msg.what = REQUEST_SUCCESS;
-                Bundle bundle = new Bundle();
-                bundle.putString("rep", rep);
-                msg.setData(bundle);
-                mainHandler.sendMessage(msg);
-              // 解析返回的信息，获取这两个数据，hostpwd是主持密码，guestpwd是访客密码，再与本地输入密码进行判断，是否可以入会
-              // String hostPwd = jsonObject.optString("hostpwd");
-              // String guestPwd = jsonObject.optString("guestpwd");
+            public void onFail(Exception e) {
+                // 验证失败
             }
         });
 
@@ -179,17 +159,11 @@ preferences.setSimulcast(true);
 ```java
 private void makeCall(){
     vcrtc = new VCRTC(this);
-  	// 设置入会类型，如果音频视频都打开，使用video，具体使用请查看demo
-  	vcrtc.setCallType(callType);
-  	// 设置接收1大流4小流，可调整
-  	vcrtc.setClayout("1:4");
   	vcrtc.setCheckdup(VCUtil.MD5(SystemUtil.getMac(context) + "显示的昵称"));
   	// 如果是登录，需要传入账号
   	if (null != call.getAccount()) {
        vcrtc.setAccount(call.getAccount());
     }
-  	// 专属于有效，用于会中信息返回，通过onParticipantList返回
-  	vcrtc.setSupportParticipantList(true);
   	// 如果是被呼msgjson中会有对应信息，主动入会不需要
   	
     if (call.getMsgJson() != null && !"".equals(call.getMsgJson())) {
@@ -207,8 +181,6 @@ private void makeCall(){
                 e.printStackTrace();
             }
         }
-  	// 设置使用前置摄像头
-  	vcrtc.setFrontCameraEnable(true);
     vcrtc.setVCRTCListener(listener);
     // 发起呼叫，这里的回调只是接口回调成功，还未入会，如果失败，说明入会失败，给出错误信息
     vcrtc.connect("会议室号", "会议室密码", "显示名", new CallBack() {
@@ -320,8 +292,6 @@ VCRTCListener listener = new VCRTCListener() {
 ### 退出会议
 
 ```java
-private void disconnect() {
-    vcrtc.disconnect();
-}
+vcrtc.disconnect();
 ```
 

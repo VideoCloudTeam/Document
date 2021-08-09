@@ -51,27 +51,4 @@
    }
    ```
 
-5. 屏幕共享接收端回调，专属云和公有云的接收屏幕共享视频的回调略有不同
-
-   ```java
-   //公有云以一张张图片的形式接收其他端屏幕共享内容
-   @Override
-   public void onPresentationReload(String picUrl) {
-       //picUrl为双流图片的链接
-   }
-   //专属云一视频的形式接收其他端屏幕共享内容，返回的是远端双流视频view或视频流，onAddView和onRemoteStream根据实际需求监听一个就好。
-     	@Override
-   public void onAddView(String uuid, VCRTCView vcrtcView, String viewType) {
-       //viewType分两种。1. presentation（双流视频）2. video（正常视频）
-       if (streamType.equals("presentation")) {
-           ......
-       }
-   }
-   @Override
-   public void onRemoteStream(String uuid, String streamURL,String streamType) {
-       // viewType分两种。1. presentation（双流视频）2. video（正常视频）
-       if (streamType.equals("presentation")) {
-           ......        
-       }
-   }
-   ```
+   
