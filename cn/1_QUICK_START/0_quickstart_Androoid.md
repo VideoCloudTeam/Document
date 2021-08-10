@@ -85,7 +85,9 @@ public class MyApplication extends Application {
       	SoulPermission.init(this);
         //初始化SDK
         RTCManager.init(this);
-      
+      	// 设置开发者id
+      	prefs.setDeviceId("");
+        prefs.setToken("");
 
         //以下可不设置，设置是为了出现问题方便服务端定位
         //设备类型
